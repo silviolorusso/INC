@@ -90,7 +90,7 @@ body {
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 92%;
 	margin: 0 auto;
 }
 #container {}
@@ -190,20 +190,6 @@ h5, .h5 {
 			}
 		}
 	}
-	nav {
-		
-		div.top-nav {
-			ul {
-				li {	
-					a {}
-	
-					&:first-child {}
-	
-					&:last-child {}
-				}
-			}
-		}
-	}
 }
 
 /*********************
@@ -248,50 +234,77 @@ and more scalable.
 		*/
 		ul.sub-menu,
 		ul.children {
-
 			li {
-
 				a {
 					padding-left: 30px;
-
 					&:hover,
 					&:focus {}
-
 					&:link {}
-
 				}
-
 				&:first-child {}
-
 				&:last-child {}
-
 			}
-
 		}
-
 	} /* end .menu li */
-
 	/* highlight current page */
 	li.current-menu-item,
 	li.current_page_item,
 	li.current_page_ancestor {
 		border: 1px solid @link-color;
-
 		a {}
-
 	}  /* end current highlighters */
-
 } /* end .nav */
-
 
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 2.2em;
-
-	#inner-content {}
+	#pre-inner-content {
+		#inc-blurb {
+			font-weight: 300;
+			font-size: 2.2em;
+			color: darken(@grey, 60%);
+			p {
+				margin-top: 1em;
+			}
+		}
+		#inc-news {
+			background-color: @white;
+			text-align: center;
+			font-size: 1.5em;
+			color: @black;
+			padding-bottom: 0.5em;
+			#inc-news-pic {	
+				width: 100%;
+				height: 135px;
+				background-image: url('../images/INC-news.png');
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			p {
+				margin-top: 0;
+			}
+		}
+		#geert-blog {
+			background-color: @white;
+			text-align: center;
+			font-size: 2.2em;
+			font-weight: 300;
+			p {
+				padding: 0.4em 0 0.5em 0;
+				margin-top: 0.7em;
+			}
+		}
+	}
+	#banner{
+		background-color: @white;
+		line-height: 0;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
 }
 
 		.hentry {

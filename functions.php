@@ -186,7 +186,7 @@ add_action( 'admin_menu', 'my_plugin_menu' );
 
 /** Step 1. */
 function my_plugin_menu() {
-	add_options_page( 'INC Options', 'INC Options', 'manage_options', 'my-unique-identifier', 'my_plugin_options' );
+	add_options_page( 'INC Options', 'INC Options', 'manage_options', 'inc-settings', 'my_plugin_options' );
 }
 
 /** Step 3. */
@@ -196,25 +196,40 @@ function my_plugin_options() {
     	wp_die( __('You do not have sufficient permissions to access this page.') );
     }
     // variables for the field and option names 
-    $opt_name = 'inc_blurb';
     $hidden_field_name = 'inc_submit_hidden';
+    
+    $opt_name = 'inc_blurb';
     $data_field_name = 'inc_blurb';
+    
+    $opt_name2 = 'inc_banner';
+    $data_field_name2 = 'inc_banner';
+    
+    $opt_name3 = 'inc_banner_url';
+    $data_field_name3 = 'inc_banner_url';
+    
     // Read in existing option value from database
     $opt_val = get_option( $opt_name );
+    $opt_val2 = get_option( $opt_name2 );
+    $opt_val3 = get_option( $opt_name3 );
+    
     // See if the user has posted us some information
     // If they did, this hidden field will be set to 'Y'
     if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' ) {
         // Read their posted value
         $opt_val = $_POST[ $data_field_name ];
+        $opt_val2 = $_POST[ $data_field_name2 ];
+        $opt_val3 = $_POST[ $data_field_name3 ];
         // Save the posted value in the database
         update_option( $opt_name, $opt_val );
+        update_option( $opt_name2, $opt_val2 );
+         update_option( $opt_name3, $opt_val3 );
         // Put an settings updated message on the screen
 	?>
 	<div class="updated"><p><strong><?php _e('settings saved.', 'menu-test' ); ?></strong></p></div>
 		<?php
 		    }
 		    // Now display the settings editing screen
-		    echo '<div class="wrap">';
+		echo '<div class="wrap">';
 		    // header
 		    echo "<h2>" . __( 'INC Settings', 'menu-test' ) . "</h2>";
 		    // settings form
@@ -224,11 +239,31 @@ function my_plugin_options() {
 			<p><?php _e("INC Blurb", 'menu-test' ); ?></p>
 			<textarea name="<?php echo $data_field_name; ?>" style="width: 400px; height: 150px;"><?php echo $opt_val; ?></textarea>
 			<hr />
+			<p><?php _e("INC Banner", 'menu-test' ); ?></p>
+			<input type="button" class='button-secondary' id="upload_image_button" value="Upload Image" />
+			<input type="text" name="<?php echo $data_field_name2; ?>" id="upload_image" value="<?php echo $opt_val2; ?>" size='40' /><br/>
+			Banner URL: <input type="text" name="<?php echo $data_field_name3; ?>" id="upload_image" value="<?php echo $opt_val3; ?>" size='40' />
+			<hr />
 			<p class="submit">
 				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
 			</p>
 		</form>
 	</div>
 <?php
+}
+
+// Upload images script for optional banner
+function my_admin_scripts() {
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
+	wp_register_script('my-upload', get_template_directory_uri().'/library/js/upload.js', array('jquery','media-upload','thickbox'));
+	wp_enqueue_script('my-upload');
+}
+function my_admin_styles() {
+	wp_enqueue_style('thickbox');
+}
+if (isset($_GET['page']) && $_GET['page'] == 'inc-settings') {
+	add_action('admin_print_scripts', 'my_admin_scripts');
+	add_action('admin_print_styles', 'my_admin_styles');
 }
 ?>
