@@ -27,8 +27,9 @@
 					</div>
 				</a>
 				<?php } ?>
+				<!-- projects here -->
 				<div id="inner-content" class="wrap clearfix">
-					<div id="main" class="eightcol first clearfix" role="main">
+					<div id="main" class="twelvecol first last clearfix" role="main">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 							<header class="article-header">
@@ -72,6 +73,19 @@
 								</article>
 						<?php endif; ?>
 					</div>
+				</div>
+				<a href="#">
+					<div id="inc-pubs">
+						<div id="inc-pubs-button">
+							See All Publications
+						</div>
+					</div>
+				</a>
+				<div id="newsletter" class="wrap clearfix">
+					<form action="http://listcultures.org/mailman/listinfo/networkcultures-l_listcultures.org" action="GET"> 
+						<input type="text" value="Add your email...">
+						<input type="submit" value="SUBSCRIBE ME TO INC NEWSLETTER">
+					</form>
 				</div>
 			</div>
 <?php get_footer(); ?>

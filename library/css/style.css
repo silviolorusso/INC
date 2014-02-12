@@ -724,6 +724,14 @@ body {
   width: 92%;
   margin: 0 auto;
 }
+#container {
+  margin-bottom: -180px;
+}
+#container:after {
+  content: "";
+  display: block;
+  height: 180px;
+}
 /*********************
 04. LINK STYLES
 *********************/
@@ -928,6 +936,48 @@ and more scalable.
 #content #banner img {
   width: 100%;
   height: auto;
+}
+#content #inc-pubs {
+  height: 225px;
+  background-color: #ffffff;
+  background-image: url('../images/inc-pubs.jpg');
+  background-position: center center;
+  background-size: auto auto;
+  padding-top: 80px;
+}
+#content #inc-pubs div {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+  background-color: #ffffff;
+  width: 335px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+#content #newsletter {
+  padding: 2.3em 0;
+}
+#content #newsletter input {
+  width: 100%;
+  height: 65px;
+  outline: none;
+  font-size: 1.5em;
+}
+#content #newsletter input[type="text"] {
+  padding: 0 20px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 15px;
+  font-weight: 300;
+  color: #8e8e8e;
+}
+#content #newsletter input[type="submit"] {
+  background-color: #ff3300;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
 }
 /* end .hentry */
 /* want to style individual post classes? Booya! */
@@ -1242,6 +1292,9 @@ and more scalable.
 *********************/
 .footer {
   clear: both;
+  background-color: #444444;
+  color: #ffffff;
+  height: 180px;
 }
 /*
 	if you checked out the link above:
