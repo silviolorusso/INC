@@ -44,7 +44,9 @@
 					    <input type="text" class="inputbox" alt="search" maxlength="20" name="s" id="s" size="15">
 					</div>
 				</div>
-				<nav role="navigation">
+			</header>
+			<div id="main-nav">
+				<nav role="navigation" class="wrap">
 					<?php bones_main_nav(); ?>
 				</nav>
-			</header>
+			</div>

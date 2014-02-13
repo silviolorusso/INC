@@ -198,6 +198,7 @@ function my_plugin_options() {
     // variables for the field and option names 
     $hidden_field_name = 'inc_submit_hidden';
     
+    
     $opt_name = 'inc_blurb';
     $data_field_name = 'inc_blurb';
     
@@ -207,10 +208,22 @@ function my_plugin_options() {
     $opt_name3 = 'inc_banner_url';
     $data_field_name3 = 'inc_banner_url';
     
+    // single projects
+    
+    $opt_name4 = 'project_1_banner_url';
+    $data_field_name4 = 'project_1_banner_url';
+    
+    $opt_name5 = 'project_1_desc';
+    $data_field_name5 = 'project_1_desc';
+    
     // Read in existing option value from database
+    
     $opt_val = get_option( $opt_name );
     $opt_val2 = get_option( $opt_name2 );
     $opt_val3 = get_option( $opt_name3 );
+    
+    $opt_val4 = get_option( $opt_name4 );
+    $opt_val5 = get_option( $opt_name5 );
     
     // See if the user has posted us some information
     // If they did, this hidden field will be set to 'Y'
@@ -219,10 +232,16 @@ function my_plugin_options() {
         $opt_val = $_POST[ $data_field_name ];
         $opt_val2 = $_POST[ $data_field_name2 ];
         $opt_val3 = $_POST[ $data_field_name3 ];
+        
+        $opt_val4 = $_POST[ $data_field_name4 ];
+        $opt_val5 = $_POST[ $data_field_name5 ];
         // Save the posted value in the database
         update_option( $opt_name, $opt_val );
         update_option( $opt_name2, $opt_val2 );
-         update_option( $opt_name3, $opt_val3 );
+        update_option( $opt_name3, $opt_val3 );
+        
+        update_option( $opt_name4, $opt_val4 );
+        update_option( $opt_name5, $opt_val5 );
         // Put an settings updated message on the screen
 	?>
 	<div class="updated"><p><strong><?php _e('settings saved.', 'menu-test' ); ?></strong></p></div>
@@ -239,11 +258,21 @@ function my_plugin_options() {
 			<p><?php _e("INC Blurb", 'menu-test' ); ?></p>
 			<textarea name="<?php echo $data_field_name; ?>" style="width: 400px; height: 150px;"><?php echo $opt_val; ?></textarea>
 			<hr />
+			
 			<p><?php _e("INC Banner", 'menu-test' ); ?></p>
-			<input type="button" class='button-secondary' id="upload_image_button" value="Upload Image" />
-			<input type="text" name="<?php echo $data_field_name2; ?>" id="upload_image" value="<?php echo $opt_val2; ?>" size='40' /><br/>
-			Banner URL: <input type="text" name="<?php echo $data_field_name3; ?>" id="upload_image" value="<?php echo $opt_val3; ?>" size='40' />
+			<input type="button" class="button-secondary upload_image_button" value="Upload Image" no="0" />
+			<input type="text" name="<?php echo $data_field_name2; ?>" id="upload_image0" value="<?php echo $opt_val2; ?>" size='100' no="1"/><br/>
+			Banner URL: <input type="text" name="<?php echo $data_field_name3; ?>" value="<?php echo $opt_val3; ?>" size='40' />
 			<hr />
+			
+			<p><?php _e("Project #1", 'menu-test' ); ?></p>
+			<input type="button" class='button-secondary upload_image_button' value="Upload Banner" no="1" />
+			<input type="text" name="<?php echo $data_field_name4; ?>" id="upload_image1" value="<?php echo $opt_val4; ?>" size='100' /><br/>
+			
+			Project description: <input type="text" name="<?php echo $data_field_name5; ?>" value="<?php echo $opt_val5; ?>" size='80' />
+			
+			<hr />
+			
 			<p class="submit">
 				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
 			</p>

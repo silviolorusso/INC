@@ -24,7 +24,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	max-width: 1140px;
+	max-width: 960px;
 }
 
 /*********************
@@ -40,30 +40,12 @@ NAVIGATION STYLES
 *********************/
 
 .nav {
-	background: #eee;
-	border: 0;
-	ul {
-		margin-top:0;
-	}
 	li {
-		float: left;
-		position: relative;
-
 		a {
 			border-bottom: 0;
-
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-			&:hover, &:focus {
-				background-color: #dedede;
-			}
 		}
-
 		&:first-child {}
 		&:last-child {}
-
 		/*
 		plan your menus and drop-downs wisely.
 		*/
@@ -134,6 +116,25 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+/*********************
+08. POSTS & CONTENT STYLES
+*********************/
+
+#content {
+	#pre-inner-content {
+		#geert-blog {
+			text-align: left;
+		}	
+	}
+	#banner{
+		text-align: center;
+		padding: 20px 0;
+		img {
+			max-width: 960px;
+		}
+	}
+}
 
 /*********************
 SIDEBARS & ASIDES

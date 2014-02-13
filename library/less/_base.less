@@ -171,12 +171,11 @@ h5, .h5 {
 *********************/
 
 .header {
+	background-color: @white;
+	border-bottom: 1px solid @grey;
 	#inner-header {
 		height: 100px;
-		border-bottom: 1px solid @grey;
 		background-color: white;
-		width: 100%;
-		padding: 0 2% 0 2%;
 		#logo {
 			margin-top: 10px;
 			margin-bottom: 0;
@@ -210,16 +209,18 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-
+#main-nav {
+	background-color: @white;
+}
 .nav {
 	border-bottom: 0;
+	height: 90px;
 	text-transform: uppercase;
 	font-size: 1.3em;
 	font-weight: 300;
 	background-color: white;
-	padding-left: 2%;
-	padding-right: 2%;
 	li {
+		float: left;
 		display: inline;
 		padding: 10px;
 		border: 1px solid transparent;
@@ -298,6 +299,7 @@ and more scalable.
 			text-align: center;
 			font-size: 2.2em;
 			font-weight: 300;
+			padding: 0 30px;
 			p {
 				padding: 0.4em 0 0.5em 0;
 				margin-top: 0.7em;
@@ -352,6 +354,19 @@ and more scalable.
 				font-weight: 600;
 				color: @white;
 			} 
+		}
+	}
+}
+#inner-content {
+	padding-bottom: 2em;
+	.box {
+		background-color: @white;
+		margin-top: 2em;
+		width: 100%;
+		.left {
+			img {
+				width: 100%;
+			}
 		}
 	}
 }
