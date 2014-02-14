@@ -120,12 +120,32 @@ NAVIGATION STYLES
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
-
+.box {
+	.latest {
+		display: table-cell !important;
+		vertical-align: top;
+		padding: 20px;
+		color: darken(@grey, 40%);
+		small {
+			text-transform: uppercase;
+		}
+		h1 {
+			font-size: 1em;
+			margin-bottom: 0;
+		}
+		.by {
+			font-size: 0.8em;
+		}
+	}
+}
 #content {
 	#pre-inner-content {
 		#geert-blog {
 			text-align: left;
 		}	
+		#inc-news {
+			font-size: 1em;
+		}
 	}
 	#banner{
 		text-align: center;
@@ -135,6 +155,8 @@ NAVIGATION STYLES
 		}
 	}
 }
+
+	
 
 /*********************
 SIDEBARS & ASIDES

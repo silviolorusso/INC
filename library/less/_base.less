@@ -266,7 +266,27 @@ and more scalable.
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
-
+.box {
+	background-color: @white;
+	margin-top: 2em;
+	width: 100%;
+	.left {
+		vertical-align: top;
+		border-right: 1px solid @grey;
+		width: 36%;
+		img {
+			width: 100%;
+		}
+		p {
+			padding: 0 20px 20px 20px;
+			margin: 0;
+			text-align: center;
+		}
+	}
+	.latest {
+		display: none;
+	}
+}
 #content {
 	#pre-inner-content {
 		#inc-blurb {
@@ -359,16 +379,6 @@ and more scalable.
 }
 #inner-content {
 	padding-bottom: 2em;
-	.box {
-		background-color: @white;
-		margin-top: 2em;
-		width: 100%;
-		.left {
-			img {
-				width: 100%;
-			}
-		}
-	}
 }
 
 		.hentry {

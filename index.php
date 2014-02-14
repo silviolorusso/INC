@@ -4,13 +4,34 @@
 					<div id="inc-blurb">
 						<p><?php echo get_option('inc_blurb');?></p>
 					</div>
-					<a href="#">
-						<div id="inc-news">
-							<div id="inc-news-pic">
-							</div>
-							<p>Latest Updates from the INC</p>
-						</div>
-					</a>
+					<table class="box clearfix">
+						<a href="#">
+							<td class="left" id="inc-news">
+								<div id="inc-news-pic">
+								</div>
+								<p>Latest Updates from the INC</p>
+							</td>
+						</a>
+						<td class="latest">
+							<small>Latest Post</small>
+							<?php
+							$the_query = new WP_Query('posts_per_page=1');
+							if ( $the_query->have_posts() ) { 
+								while ( $the_query->have_posts() ) {
+									$the_query->the_post(); ?>
+									<a href="<?php echo the_permalink(); ?>">
+											<h1><?php echo get_the_title(); ?></h1>
+									</a>
+									<span class="by">By <?php echo get_the_author(); ?>, <?php echo get_the_date(); ?></span>
+									<p><?php echo get_the_excerpt(); ?></p>
+								<?php } 
+							} else {
+								echo 'No posts found!';
+							}
+							wp_reset_postdata();
+							?>
+						</td>
+					</table>
 					<a href="#">
 						<div id="geert-blog">
 							<p>Net Critique by Geert Lovink</p>
@@ -45,22 +66,22 @@
 								$lastDate = $last->get_date('j/n/y');	
 								$lastDesc = $last->get_description();	
 								?>
-								<div class="box wrap clearfix">
-									<div class="left fivecol first">
+								<table class="box wrap clearfix">
+									<td class="left">
 										<a href="<?php echo $feedLink ?>">
 											<img src="<?php echo $banner ?>" />
 										</a>
 										<p><?php echo $description ?></p>
-									</div>
-									<div class="latest-post sevencol last">
+									</td>
+									<td class="latest">
 										<small>Latest Post</small>
 										<a href="<?php echo $lastLink ?>">
 											<h1><?php echo $lastTitle ?></h1>
 										</a>
-										<span>By <?php echo $lastAuthorName ?>, <?php echo $lastDate ?></span>
+										<span class="by">By <?php echo $lastAuthorName ?>, <?php echo $lastDate ?></span>
 										<p><?php echo $lastDesc ?></p>
-									</div>
-								</div>
+									</td>
+								</table>
 						<?php } 
 						}
 					    for ($i = 1; $i <= 5; $i++) {

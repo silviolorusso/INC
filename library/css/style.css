@@ -898,6 +898,27 @@ and more scalable.
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
+.box {
+  background-color: #ffffff;
+  margin-top: 2em;
+  width: 100%;
+}
+.box .left {
+  vertical-align: top;
+  border-right: 1px solid #f4f4f4;
+  width: 36%;
+}
+.box .left img {
+  width: 100%;
+}
+.box .left p {
+  padding: 0 20px 20px 20px;
+  margin: 0;
+  text-align: center;
+}
+.box .latest {
+  display: none;
+}
 #content #pre-inner-content #inc-blurb {
   font-weight: 300;
   font-size: 2.2em;
@@ -986,14 +1007,6 @@ and more scalable.
 }
 #inner-content {
   padding-bottom: 2em;
-}
-#inner-content .box {
-  background-color: #ffffff;
-  margin-top: 2em;
-  width: 100%;
-}
-#inner-content .box .left img {
-  width: 100%;
 }
 /* end .hentry */
 /* want to style individual post classes? Booya! */
@@ -1585,8 +1598,27 @@ NAVIGATION STYLES
   /*********************
 08. POSTS & CONTENT STYLES
 *********************/
+  .box .latest {
+    display: table-cell !important;
+    vertical-align: top;
+    padding: 20px;
+    color: #8e8e8e;
+  }
+  .box .latest small {
+    text-transform: uppercase;
+  }
+  .box .latest h1 {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  .box .latest .by {
+    font-size: 0.8em;
+  }
   #content #pre-inner-content #geert-blog {
     text-align: left;
+  }
+  #content #pre-inner-content #inc-news {
+    font-size: 1em;
   }
   #content #banner {
     text-align: center;
