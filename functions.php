@@ -198,51 +198,46 @@ function my_plugin_options() {
     // variables for the field and option names 
     $hidden_field_name = 'inc_submit_hidden';
     
-    
-    $opt_name = 'inc_blurb';
-    $data_field_name = 'inc_blurb';
-    
-    $opt_name2 = 'inc_banner';
-    $data_field_name2 = 'inc_banner';
-    
-    $opt_name3 = 'inc_banner_url';
-    $data_field_name3 = 'inc_banner_url';
+    $pre_opt_name = 'inc_blurb';
+    $pre_opt_name2 = 'inc_banner';
+    $pre_opt_name3 = 'inc_banner_url';
+    // Read in existing option value from database
+    $pre_opt_val = get_option( $pre_opt_name );
+    $pre_opt_val2 = get_option( $pre_opt_name2 );
+    $pre_opt_val3 = get_option( $pre_opt_name3 );
     
     // single projects
-    
-    $opt_name4 = 'project_1_banner_url';
-    $data_field_name4 = 'project_1_banner_url';
-    
-    $opt_name5 = 'project_1_desc';
-    $data_field_name5 = 'project_1_desc';
-    
+    $opts = array();
+    for ($i = 1; $i <= 5; $i++) {
+    	array_push($opts, 'project_'.$i.'_banner_url');
+    	array_push($opts, 'project_'.$i.'_desc');
+    	array_push($opts, 'project_'.$i.'_feed_url');
+    } 
+    $opts_val = array();
     // Read in existing option value from database
+    foreach ($opts as $opt) {
+    	$opt_val = get_option($opt);
+    	array_push($opts_val, $opt_val);
+    }
     
-    $opt_val = get_option( $opt_name );
-    $opt_val2 = get_option( $opt_name2 );
-    $opt_val3 = get_option( $opt_name3 );
-    
-    $opt_val4 = get_option( $opt_name4 );
-    $opt_val5 = get_option( $opt_name5 );
-    
+
     // See if the user has posted us some information
     // If they did, this hidden field will be set to 'Y'
     if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' ) {
         // Read their posted value
-        $opt_val = $_POST[ $data_field_name ];
-        $opt_val2 = $_POST[ $data_field_name2 ];
-        $opt_val3 = $_POST[ $data_field_name3 ];
-        
-        $opt_val4 = $_POST[ $data_field_name4 ];
-        $opt_val5 = $_POST[ $data_field_name5 ];
+        $pre_opt_val = $_POST[ $pre_opt_name ];
+        $pre_opt_val2 = $_POST[ $pre_opt_name2 ];
+        $pre_opt_val3 = $_POST[ $pre_opt_name3 ];
         // Save the posted value in the database
-        update_option( $opt_name, $opt_val );
-        update_option( $opt_name2, $opt_val2 );
-        update_option( $opt_name3, $opt_val3 );
+        update_option( $pre_opt_name, $pre_opt_val );
+        update_option( $pre_opt_name2, $pre_opt_val2 );
+        update_option( $pre_opt_name3, $pre_opt_val3 );
         
-        update_option( $opt_name4, $opt_val4 );
-        update_option( $opt_name5, $opt_val5 );
-        // Put an settings updated message on the screen
+        foreach ($opts as $opt) {
+	    	$opt_val = $_POST[ $opt ];
+	    	update_option( $opt, $opt_val );
+	    }
+        // Put a settings updated message on the screen
 	?>
 	<div class="updated"><p><strong><?php _e('settings saved.', 'menu-test' ); ?></strong></p></div>
 		<?php
@@ -255,23 +250,33 @@ function my_plugin_options() {
 		    ?>
 		<form name="form1" method="post" action="">
 			<input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y">
+			
+			<p class="submit">
+				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
+			</p>
+			
 			<p><?php _e("INC Blurb", 'menu-test' ); ?></p>
-			<textarea name="<?php echo $data_field_name; ?>" style="width: 400px; height: 150px;"><?php echo $opt_val; ?></textarea>
+			<textarea name="<?php echo $pre_opt_name; ?>" style="width: 400px; height: 150px;"><?php echo $pre_opt_val; ?></textarea>
 			<hr />
 			
 			<p><?php _e("INC Banner", 'menu-test' ); ?></p>
-			<input type="button" class="button-secondary upload_image_button" value="Upload Image" no="0" />
-			<input type="text" name="<?php echo $data_field_name2; ?>" id="upload_image0" value="<?php echo $opt_val2; ?>" size='100' no="1"/><br/>
-			Banner URL: <input type="text" name="<?php echo $data_field_name3; ?>" value="<?php echo $opt_val3; ?>" size='40' />
+			<input type="button" class="button-secondary upload_image_button" value="Upload Image" no="NaN" />
+			<input type="text" name="<?php echo $pre_opt_name2; ?>" id="upload_imageNaN" value="<?php echo $pre_opt_val2; ?>" size='100' /><br/>
+			Banner URL: <input type="text" name="<?php echo $pre_opt_name3; ?>" value="<?php echo $pre_opt_val3; ?>" size='40' />
 			<hr />
 			
-			<p><?php _e("Project #1", 'menu-test' ); ?></p>
-			<input type="button" class='button-secondary upload_image_button' value="Upload Banner" no="1" />
-			<input type="text" name="<?php echo $data_field_name4; ?>" id="upload_image1" value="<?php echo $opt_val4; ?>" size='100' /><br/>
-			
-			Project description: <input type="text" name="<?php echo $data_field_name5; ?>" value="<?php echo $opt_val5; ?>" size='80' />
-			
-			<hr />
+			<?php 
+			$k = 0;
+			for ($i = 1; $i <= 5; $i++) { ?>
+				<p><?php _e("Project #".($i), 'menu-test' ); ?></p>
+				<input type="button" class='button-secondary upload_image_button' value="Upload Banner" no="<?php echo $k; ?>" />
+				<input type="text" name="<?php echo $opts[$k]; ?>" id="upload_image<?php echo $k; ?>" value="<?php echo $opts_val[$k]; ?>" size='100' /><br/>
+				Project description: <input type="text" name="<?php echo $opts[($k+1)]; ?>" value="<?php echo $opts_val[($k+1)]; ?>" size='80' /><br/>
+				Project feed: <input type="text" name="<?php echo $opts[($k+2)]; ?>" value="<?php echo $opts_val[($k+2)]; ?>" size='80' />
+				<hr />
+				<?php 
+				$k += 3;
+			} ?>
 			
 			<p class="submit">
 				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
@@ -280,7 +285,6 @@ function my_plugin_options() {
 	</div>
 <?php
 }
-
 // Upload images script for optional banner
 function my_admin_scripts() {
 	wp_enqueue_script('media-upload');

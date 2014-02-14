@@ -34,37 +34,41 @@
 						include_once('library/parse-feed.php');
 						
 						function projectBox($banner, $description, $feedURL) {
-							$feed = getFeed($feedURL);
-							$feedLink = getFeedLink($feed);
-							$last = getLastItem($feed);
-							$lastLink = $last->get_permalink();
-							$lastTitle = $last->get_title();	
-							$lastAuthor = $last->get_author();
-							$lastAuthorName = $lastAuthor->get_name();
-							$lastDate = $last->get_date('j/n/y');	
-							$lastDesc = $last->get_description();	
-							?>
-							<div class="box wrap clearfix">
-								<div class="left fivecol first">
-									<a href="<?php echo $feedLink ?>">
-										<img src="<?php echo $banner ?>" />
-									</a>
-									<p><?php echo $description ?></p>
+							if (($banner != '') && ($description != '') && ($feedURL != '')) {						
+								$feed = getFeed($feedURL);
+								$feedLink = getFeedLink($feed);
+								$last = getLastItem($feed);
+								$lastLink = $last->get_permalink();
+								$lastTitle = $last->get_title();	
+								$lastAuthor = $last->get_author();
+								$lastAuthorName = $lastAuthor->get_name();
+								$lastDate = $last->get_date('j/n/y');	
+								$lastDesc = $last->get_description();	
+								?>
+								<div class="box wrap clearfix">
+									<div class="left fivecol first">
+										<a href="<?php echo $feedLink ?>">
+											<img src="<?php echo $banner ?>" />
+										</a>
+										<p><?php echo $description ?></p>
+									</div>
+									<div class="latest-post sevencol last">
+										<small>Latest Post</small>
+										<a href="<?php echo $lastLink ?>">
+											<h1><?php echo $lastTitle ?></h1>
+										</a>
+										<span>By <?php echo $lastAuthorName ?>, <?php echo $lastDate ?></span>
+										<p><?php echo $lastDesc ?></p>
+									</div>
 								</div>
-								<div class="latest-post sevencol last">
-									<small>Latest Post</small>
-									<a href="<?php echo $lastLink ?>">
-										<h1><?php echo $lastTitle ?></h1>
-									</a>
-									<span>By <?php echo $lastAuthorName ?>, <?php echo $lastDate ?></span>
-									<p><?php echo $lastDesc ?></p>
-								</div>
-							</div>
-						<?php }
-						$banner1 = get_option('project_1_banner_url');
-						$description1 = get_option('project_1_desc');
-						
-						projectBox($banner1, $description1, 'http://silviolorusso.com/feed/');
+						<?php } 
+						}
+					    for ($i = 1; $i <= 5; $i++) {
+						    $banner = get_option('project_'.$i.'_banner_url');
+						    $desc = get_option('project_'.$i.'_desc');
+						    $feedURL = get_option('project_'.$i.'_feed_url');
+					    	projectBox($banner, $desc, $feedURL);
+					    }
 						?>
 					</div>
 				</div>
