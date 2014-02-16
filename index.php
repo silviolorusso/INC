@@ -48,6 +48,9 @@
 					</div>
 				</a>
 				<?php } ?>
+				<div id="current-projects" class="wrap clearfix">
+					<h1>Current Projects</h1>
+				</div>
 				<!-- projects here -->
 				<div id="inner-content" class="wrap clearfix">
 					<div id="main" class="twelvecol first last clearfix" role="main">

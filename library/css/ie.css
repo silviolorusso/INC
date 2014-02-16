@@ -452,6 +452,18 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+.header #inner-header {
+  height: 89px;
+}
+.header #inner-header #logo a img {
+  height: 50px;
+  margin-top: 15px;
+}
+.header #inner-header #search input {
+  width: 240px;
+  height: 33px;
+  margin-top: 25px;
+}
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -509,10 +521,13 @@ NAVIGATION STYLES
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
+.box .left {
+  font-size: 1em;
+}
 .box .latest {
   display: table-cell !important;
   vertical-align: top;
-  padding: 20px;
+  padding: 0.5em 1em;
   color: #8e8e8e;
 }
 .box .latest small {
@@ -521,15 +536,25 @@ NAVIGATION STYLES
 .box .latest h1 {
   font-size: 1em;
   margin-bottom: 0;
+  margin-top: 2px;
 }
 .box .latest .by {
   font-size: 0.8em;
 }
+#content #pre-inner-content #inc-blurb {
+  font-size: 2em;
+}
 #content #pre-inner-content #geert-blog {
   text-align: left;
+  font-size: 2em;
+  margin-bottom: -0.3em;
 }
 #content #pre-inner-content #inc-news {
   font-size: 1em;
+}
+#content #pre-inner-content #inc-news #inc-news-pic {
+  height: 142px;
+  background-size: 200px;
 }
 #content #banner {
   text-align: center;
@@ -537,6 +562,20 @@ NAVIGATION STYLES
 }
 #content #banner img {
   max-width: 960px;
+}
+#content #current-projects h1 {
+  font-size: 2em;
+}
+#content #inc-pubs div {
+  width: 25%;
+  font-size: 1.15em;
+}
+#content #newsletter {
+  text-align: center;
+}
+#content #newsletter input {
+  width: 35%;
+  font-size: 1.15em;
 }
 /*********************
 SIDEBARS & ASIDES

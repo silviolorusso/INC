@@ -42,6 +42,9 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	background-color: @grey;
+	// Roberto
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 /********************
@@ -218,10 +221,10 @@ and more scalable.
 	border-bottom: 0;
 	text-transform: uppercase;
 	font-size: 0.8em;
-	font-weight: 300;
 	background-color: white;
+	padding-bottom: 2px;
 	ul {
-		margin: 1px 0;
+		margin: 2px 0;
 	}
 	li {
 		float: left;
@@ -340,6 +343,11 @@ and more scalable.
 			width: 100%;
 			height: auto;
 		}
+	}
+	#current-projects h1 {
+		color: darken(@grey, 60%);
+		font-weight: 300;
+		font-size: 1.1em;
 	}
 	#inc-pubs{
 		height: 190px;

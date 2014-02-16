@@ -17,7 +17,8 @@ come into play. Have fun!
 GENERAL STYLES
 *********************/
 
-body {}
+body {
+}
 
 /*********************
 LAYOUT & GRID STYLES
@@ -31,9 +32,24 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
-
-	#logo {}
+.header {
+	#inner-header {
+		height: 89px;
+		#logo {
+			a img {
+				height: 50px;
+				margin-top: 15px; 
+			}
+		}
+		#search {
+			input {
+				width: 240px;
+				height: 33px;
+				margin-top: 25px;
+			}
+		}
+	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -121,10 +137,13 @@ NAVIGATION STYLES
 08. POSTS & CONTENT STYLES
 *********************/
 .box {
+	.left { 
+		font-size: 1em; 
+	}
 	.latest {
 		display: table-cell !important;
 		vertical-align: top;
-		padding: 20px;
+		padding: 0.5em 1em;
 		color: darken(@grey, 40%);
 		small {
 			text-transform: uppercase;
@@ -132,6 +151,7 @@ NAVIGATION STYLES
 		h1 {
 			font-size: 1em;
 			margin-bottom: 0;
+			margin-top: 2px;
 		}
 		.by {
 			font-size: 0.8em;
@@ -140,11 +160,20 @@ NAVIGATION STYLES
 }
 #content {
 	#pre-inner-content {
+		#inc-blurb {
+			font-size: 2em;
+		}
 		#geert-blog {
 			text-align: left;
+			font-size: 2em;
+			margin-bottom: -0.3em;
 		}	
 		#inc-news {
 			font-size: 1em;
+			#inc-news-pic {	
+				height: 142px;
+				background-size: 200px;
+			}
 		}
 	}
 	#banner{
@@ -153,6 +182,22 @@ NAVIGATION STYLES
 		img {
 			max-width: 960px;
 		}
+	}
+	#current-projects h1 {
+		font-size: 2em;
+	}
+	#inc-pubs{
+		div {
+			width: 25%;
+			font-size: 1.15em;
+		}
+	}
+	#newsletter {
+		text-align: center;
+		input {
+			width: 35%;
+			font-size: 1.15em;
+		}	
 	}
 }
 
