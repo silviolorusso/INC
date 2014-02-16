@@ -174,20 +174,22 @@ h5, .h5 {
 	background-color: @white;
 	border-bottom: 1px solid @grey;
 	#inner-header {
-		height: 100px;
+		height: 54px;
 		background-color: white;
 		#logo {
-			margin-top: 10px;
+			margin-top: 3px;
 			margin-bottom: 0;
-			height: 65px; 
 			float: left;
+			a img {
+				height: 37px; 
+			}
 		}
 		#search {
 			float: right;
 			input {
-				margin-top: 27px;
-				height: 45px;
-				width: 140px;
+				margin-top: 16px;
+				height: 24px;
+				width: 80px;
 				padding: 10px;
 				background-color: @grey;
 				border: 1px solid darken(@grey, 10%);
@@ -214,11 +216,11 @@ and more scalable.
 }
 .nav {
 	border-bottom: 0;
-	height: 90px;
 	text-transform: uppercase;
-	font-size: 1.3em;
+	font-size: 0.8em;
 	font-weight: 300;
 	background-color: white;
+	padding-bottom: 12px;
 	li {
 		float: left;
 		display: inline;
@@ -274,6 +276,7 @@ and more scalable.
 		vertical-align: top;
 		border-right: 1px solid @grey;
 		width: 36%;
+		font-size: 0.8em;
 		img {
 			width: 100%;
 		}
@@ -291,7 +294,7 @@ and more scalable.
 	#pre-inner-content {
 		#inc-blurb {
 			font-weight: 300;
-			font-size: 2.2em;
+			font-size: 1.1em;
 			color: darken(@grey, 60%);
 			p {
 				margin-top: 1em;
@@ -300,15 +303,16 @@ and more scalable.
 		#inc-news {
 			background-color: @white;
 			text-align: center;
-			font-size: 1.5em;
+			font-size: 0.8em;
 			color: @black;
 			padding-bottom: 0.5em;
 			#inc-news-pic {	
 				width: 100%;
-				height: 135px;
+				height: 70px;
 				background-image: url('../images/INC-news.png');
 				background-position: center center;
 				background-repeat: no-repeat;
+				background-size: 140px;
 			}
 			p {
 				margin-top: 0;
@@ -317,7 +321,7 @@ and more scalable.
 		#geert-blog {
 			background-color: @white;
 			text-align: center;
-			font-size: 2.2em;
+			font-size: 1.1em;
 			font-weight: 300;
 			padding: 0 30px;
 			p {
@@ -335,7 +339,7 @@ and more scalable.
 		}
 	}
 	#inc-pubs{
-		height: 225px;
+		height: 190px;
 		background-color: @white;
 		background-image: url('../images/inc-pubs.jpg');
 		background-position: center center;
@@ -346,20 +350,21 @@ and more scalable.
 			margin-right: auto;
 			padding: 10px 0;
 			background-color: @white;
-			width: 335px;
+			width: 60%;
 			text-align: center;
 			font-weight: 800;
-			font-size: 1.5em;
+			font-size: 0.8em;
 			text-transform: uppercase;
 		}
 	}
 	#newsletter {
-		padding: 2.3em 0;
+		padding: 1.5em 0;
 		input {
 			width: 100%;
-			height: 65px;
+			padding: 10px 0;
 			outline: none;
-			font-size: 1.5em;
+			font-size: 0.8em;
+/*
 			&[type="text"] {
 				padding: 0 20px;
 				border: 1px solid darken(@grey, 10%);
@@ -367,6 +372,7 @@ and more scalable.
 				font-weight: 300;
 				color: darken(@grey, 40%);
 			}
+*/
 			&[type="submit"] {
 				background-color: @link-color;
 				border: none;

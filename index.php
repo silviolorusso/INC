@@ -102,8 +102,8 @@
 				</a>
 				<div id="newsletter" class="wrap clearfix">
 					<form action="http://listcultures.org/mailman/listinfo/networkcultures-l_listcultures.org" action="GET"> 
-						<input type="text" value="Add your email...">
-						<input type="submit" value="SUBSCRIBE ME TO INC NEWSLETTER">
+						<!--<input type="text" value="Add your email...">-->
+						<input type="submit" value="SUBSCRIBE TO INC NEWSLETTER">
 					</form>
 				</div>
 			</div>
