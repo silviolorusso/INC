@@ -862,10 +862,12 @@ and more scalable.
   font-size: 0.8em;
   font-weight: 300;
   background-color: white;
-  padding-bottom: 12px;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
+}
+.nav ul {
+  margin: 1px 0;
 }
 .nav li {
   float: left;
@@ -902,7 +904,7 @@ and more scalable.
 *********************/
 .box {
   background-color: #ffffff;
-  margin-top: 2em;
+  margin-bottom: 1em;
   width: 100%;
 }
 .box .left {
@@ -962,6 +964,7 @@ and more scalable.
 #content #banner {
   background-color: #ffffff;
   line-height: 0;
+  margin-bottom: 1em;
 }
 #content #banner img {
   width: 100%;
@@ -1012,7 +1015,7 @@ and more scalable.
   color: #ffffff;
 }
 #inner-content {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
 }
 /* end .hentry */
 /* want to style individual post classes? Booya! */
