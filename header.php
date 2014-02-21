@@ -29,7 +29,9 @@
 		<?php // end of wordpress head ?>
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
+		<!-- fonts and icons -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600' rel='stylesheet' type='text/css'>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="container">

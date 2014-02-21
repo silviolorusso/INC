@@ -727,12 +727,12 @@ body {
   margin: 0 auto;
 }
 #container {
-  margin-bottom: -180px;
+  margin-bottom: -120px;
 }
 #container:after {
   content: "";
   display: block;
-  height: 180px;
+  height: 120px;
 }
 /*********************
 04. LINK STYLES
@@ -1346,7 +1346,20 @@ and more scalable.
   clear: both;
   background-color: #444444;
   color: #ffffff;
-  height: 180px;
+  height: 120px;
+  padding-top: 50px;
+}
+.footer #inner-footer #creating-tomorrow {
+  font-size: 0.8em;
+  float: left;
+  margin-top: -15px;
+}
+.footer #inner-footer #social {
+  float: right;
+}
+.footer #inner-footer #social i {
+  margin-left: 15px;
+  color: #ffffff;
 }
 /*
 	if you checked out the link above:
