@@ -174,14 +174,18 @@ h5, .h5 {
 *********************/
 
 .header {
+	position: fixed;
+	width: 100%;
 	background-color: @white;
 	border-bottom: 1px solid @grey;
+	z-index: 9999999;
 	#inner-header {
 		height: 54px;
 		background-color: white;
 		#logo {
-			margin-top: 3px;
+			margin-top: 8px;
 			margin-bottom: 0;
+			line-height: 0;
 			float: left;
 			a img {
 				height: 37px; 
@@ -198,6 +202,8 @@ h5, .h5 {
 				border: 1px solid darken(@grey, 10%);
 				border-radius: 30px;
 				outline: none;
+				font-size: 0.8em;
+				font-family: @sans-serif;
 			}
 		}
 	}
@@ -216,6 +222,7 @@ and more scalable.
 */
 #main-nav {
 	background-color: @white;
+	padding-top: 57px;
 }
 .nav {
 	border-bottom: 0;

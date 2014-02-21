@@ -32,9 +32,9 @@
 							?>
 						</td>
 					</table>
-					<a href="#">
+					<a href="http://networkcultures.org/wpmu/geert/">
 						<div id="geert-blog">
-							<p>Net Critique by Geert Lovink</p>
+							<p>Net Critique. Blog by Geert Lovink</p>
 						</div>
 					</a>
 				</div>

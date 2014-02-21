@@ -41,15 +41,35 @@ jQuery(document).ready(function($) {
 	var responsive_viewport = $(window).width();
 	
 	/* if is below 481px */
-	if (responsive_viewport < 481) {
+	if (responsive_viewport < 768) {
+	
+		// Search Button Enlarge
+		$("#s").focus(function() {
+			$(this).parent().css({
+				position: "absolute",
+				right: "4.6%"
+			});
+			$(this).animate({
+				width: "250"
+			}, 500, function() { 
+				$(this).attr("placeholder","Enter your search...");
+			});
+			$('#logo').fadeOut();
+		});
+		$("#s").focusout(function() {
+			$("#s").animate({
+				width: "80"
+			}, 500, function() {
+				$("#s").parent().css({
+					position: "static",
+					right: "auto"
+				});
+				$('#logo').fadeIn();
+			});
+		});
 	
 	} /* end smallest screen */
-	
-	/* if is larger than 481px */
-	if (responsive_viewport > 481) {
-	
-	} /* end larger than 481px */
-	
+		
 	/* if is above or equal to 768px */
 	if (responsive_viewport >= 768) {
 	
@@ -58,17 +78,11 @@ jQuery(document).ready(function($) {
 			$(this).attr('src',$(this).attr('data-gravatar'));
 		});
 		
+		// add placeholder text fro search
+		$("#s").attr("placeholder","Enter your search...");
 	}
-	
-	/* off the bat large screen actions */
-	if (responsive_viewport > 1030) {
-	
-	}
-	
-	
 	// add all your scripts here
 	
- 
 }); /* end of as page load scripts */
 
 

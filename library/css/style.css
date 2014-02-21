@@ -817,16 +817,20 @@ h5,
 06. HEADER STYLES
 *********************/
 .header {
+  position: fixed;
+  width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #f4f4f4;
+  z-index: 9999999;
 }
 .header #inner-header {
   height: 54px;
   background-color: white;
 }
 .header #inner-header #logo {
-  margin-top: 3px;
+  margin-top: 8px;
   margin-bottom: 0;
+  line-height: 0;
   float: left;
 }
 .header #inner-header #logo a img {
@@ -844,6 +848,8 @@ h5,
   border: 1px solid #dbdbdb;
   border-radius: 30px;
   outline: none;
+  font-size: 0.8em;
+  font-family: 'Open Sans', sans-serif;
 }
 /*********************
 07. NAVIGATION STYLES
@@ -857,6 +863,7 @@ and more scalable.
 */
 #main-nav {
   background-color: #ffffff;
+  padding-top: 57px;
 }
 .nav {
   border-bottom: 0;
@@ -1562,7 +1569,7 @@ HEADER STYLES
   }
   .header #inner-header #logo a img {
     height: 50px;
-    margin-top: 15px;
+    margin-top: 10px;
   }
   .header #inner-header #search input {
     width: 240px;
@@ -1572,6 +1579,9 @@ HEADER STYLES
   /*********************
 NAVIGATION STYLES
 *********************/
+  #main-nav {
+    padding-top: 90px;
+  }
   .nav {
     /* end .menu ul li */
     /* highlight current page */
