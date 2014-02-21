@@ -299,4 +299,17 @@ if (isset($_GET['page']) && $_GET['page'] == 'inc-settings') {
 	add_action('admin_print_scripts', 'my_admin_scripts');
 	add_action('admin_print_styles', 'my_admin_styles');
 }
+
+//display first image of a post
+function catch_that_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  if (isset($matches[1][0])) {
+  	$first_img = $matches[1][0];
+  }
+  return $first_img;
+}
 ?>

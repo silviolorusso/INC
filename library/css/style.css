@@ -1031,6 +1031,33 @@ and more scalable.
 #inner-content {
   padding-bottom: 1em;
 }
+.hentry {
+  padding-bottom: 30px;
+}
+.hentry header {
+  margin-top: 20px;
+}
+.hentry header h1 {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.hentry header .byline {
+  font-size: 0.8em;
+  color: #5b5b5b;
+  margin-top: -0.5em;
+  margin-bottom: 1.5em;
+}
+.hentry footer #share {
+  color: #5b5b5b;
+}
+.hentry footer #share span {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+.hentry footer #share i {
+  color: #5b5b5b;
+  margin-left: 20px;
+}
 /* end .hentry */
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1041,10 +1068,6 @@ and more scalable.
 /* hentry class */
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
-/* post meta */
-.byline {
-  color: #999;
-}
 /* entry content */
 .entry-content {
   /*
@@ -1061,7 +1084,7 @@ and more scalable.
   margin-bottom: 1.5em;
 }
 .entry-content img {
-  margin: 0 0 1.5em 0;
+  margin: 0 0 0.8em 0;
   max-width: 100%;
   height: auto;
 }
@@ -1096,6 +1119,21 @@ and more scalable.
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
+#next #next-read {
+  color: #5b5b5b;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+#next .next-post {
+  background-color: #ffffff;
+}
+#next .next-post hentry {
+  padding-bottom: 1px;
+}
+#next .next-post .next-post-pic {
+  width: 100%;
+  height: 200px;
+}
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
