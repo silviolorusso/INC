@@ -1147,6 +1147,11 @@ and more scalable.
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
+#map {
+  width: 100%;
+  height: 500px;
+  margin-top: 2em;
+}
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
