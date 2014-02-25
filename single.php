@@ -45,7 +45,7 @@
 						$currentId = get_the_ID();
 						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 						$args = array(
-							'posts_per_page' => 2,
+							'posts_per_page' => 3,
 							'post__not_in' => array( $currentId ),
 							'paged' => $paged
 						);

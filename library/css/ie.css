@@ -563,7 +563,7 @@ NAVIGATION STYLES
 #content #banner img {
   max-width: 960px;
 }
-#content #current-projects h1 {
+#content .title-out {
   font-size: 2em;
 }
 #content #inc-pubs div {
