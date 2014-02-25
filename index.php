@@ -4,15 +4,16 @@
 					<div id="inc-blurb">
 						<p><?php echo get_option('inc_blurb');?></p>
 					</div>
-					<table class="box clearfix">
-						<a href="#">
-							<td class="left" id="inc-news">
+
+					<div class="box clearfix" id="inc-news">
+						<div class="box-left index">
+							<a href="#">
 								<div id="inc-news-pic">
 								</div>
-								<p>Latest Updates from the INC</p>
-							</td>
-						</a>
-						<td class="latest">
+							</a>
+							<p>Latest Updates from the INC</p>
+						</div>
+						<div class="box-right latest">
 							<small>Latest Post</small>
 							<?php
 							$the_query = new WP_Query('posts_per_page=1');
@@ -22,16 +23,16 @@
 									<a href="<?php echo the_permalink(); ?>">
 											<h1><?php echo get_the_title(); ?></h1>
 									</a>
-									<span class="by">By <?php echo get_the_author(); ?>, <?php echo get_the_date(); ?></span>
+									<span class="byline">By <?php echo get_the_author(); ?>, <?php echo get_the_date(); ?></span>
 									<p><?php echo get_the_excerpt(); ?></p>
 								<?php } 
 							} else {
 								echo 'No posts found!';
 							}
-							wp_reset_postdata();
-							?>
-						</td>
-					</table>
+							wp_reset_postdata(); ?>
+						</div>
+					</div>
+					
 					<a href="http://networkcultures.org/wpmu/geert/">
 						<div id="geert-blog">
 							<p>Net Critique. Blog by Geert Lovink</p>
@@ -69,22 +70,22 @@
 								$lastDate = $last->get_date('j/n/y');	
 								$lastDesc = $last->get_description();	
 								?>
-								<table class="box wrap clearfix">
-									<td class="left">
+								<div class="box clearfix">
+									<div class="box-left index">
 										<a href="<?php echo $feedLink ?>">
-											<img src="<?php echo $banner ?>" />
+											<img class="index-pic" src="<?php echo $banner ?>" />
 										</a>
 										<p><?php echo $description ?></p>
-									</td>
-									<td class="latest">
+									</div>
+									<div class="box-right latest">
 										<small>Latest Post</small>
 										<a href="<?php echo $lastLink ?>">
 											<h1><?php echo $lastTitle ?></h1>
 										</a>
-										<span class="by">By <?php echo $lastAuthorName ?>, <?php echo $lastDate ?></span>
+										<span class="byline">By <?php echo $lastAuthorName ?>, <?php echo $lastDate ?></span>
 										<p><?php echo $lastDesc ?></p>
-									</td>
-								</table>
+									</div>
+								</div>
 						<?php } 
 						}
 					    for ($i = 1; $i <= 5; $i++) {
@@ -104,9 +105,11 @@
 					</div>
 				</a>
 				<div id="newsletter" class="wrap clearfix">
-					<form action="http://listcultures.org/mailman/listinfo/networkcultures-l_listcultures.org" action="GET"> 
-						<!--<input type="text" value="Add your email...">-->
-						<input type="submit" value="SUBSCRIBE TO INC NEWSLETTER">
+					<form action="http://networkcultures.us3.list-manage2.com/subscribe/post?u=23551d685d17186a250c5a373&amp;id=a9358e73df" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Add your email..." required>
+					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;"><input type="text" name="b_23551d685d17186a250c5a373_a9358e73df" value=""></div>
+						<div class="clear"><input type="submit" value="Subscribe to INC Newsletter" name="subscribe" id="mc-embedded-subscribe"></div>
 					</form>
 				</div>
 			</div>

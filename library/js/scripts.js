@@ -83,6 +83,17 @@ jQuery(document).ready(function($) {
 	}
 	// add all your scripts here
 	
+	// infinite scroll 
+	$('#next').infinitescroll({
+	    navSelector  : "#nav-below",            
+	                   // selector for the paged navigation (it will be hidden)
+	    nextSelector : "#nav-below a:last",    
+	                   // selector for the NEXT link (to page 2)
+	    itemSelector : ".box",          
+	                   // selector for all items you'll retrieve
+	    loadingText  : "mimmo",
+	  });
+	
 }); /* end of as page load scripts */
 
 

@@ -276,32 +276,80 @@ and more scalable.
 		a {}
 	}  /* end current highlighters */
 } /* end .nav */
+#nav-below, #infscr-loading {
+	width: 100%;
+	text-align: center;
+}
 
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
+
 .box {
 	background-color: @white;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
+	position: relative;
 	width: 100%;
-	.left {
-		vertical-align: top;
-		border-right: 1px solid @grey;
-		width: 36%;
-		font-size: 0.8em;
-		img {
-			width: 100%;
-		}
+	.single {
+		min-height: 200px;
+	}
+	.excerpt {
+		text-align: left !important;
+		padding: 10px;
+	}
+	.box-left {
+		width: 100%;
+		background-position: center center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		text-align: center;
 		p {
-			padding: 0 20px 20px 20px;
-			margin: 0;
-			text-align: center;
+			margin-top: 0;
+			padding-left: 10px;
+		}
+		.index-pic {
+			width: 100%;
+			height: auto;
+			padding: 20px 0;
+			
+		}
+	}
+	.box-right {
+		width: 100%;
+		padding: 20px 20px 0 20px;
+		color: darken(@grey, 40%);
+		small {
+			text-transform: uppercase;
+		}
+		h1 {
+			font-size: 1em;
+			margin-bottom: 10px;
+			margin-top: 2px;
+			color: @link-color;
+		}
+		.content a {
+			color: @black;
 		}
 	}
 	.latest {
 		display: none;
 	}
 }
+#next {
+	#next-read {
+		color: darken(@grey, 60%);
+		font-size: 0.8em;
+		text-transform: uppercase;	
+		margin-bottom: 1em;
+	}
+}
+.byline {
+	font-size: 0.8em;
+	color: darken(@grey, 60%);
+	margin-top: -0.5em;
+	margin-bottom: 1.5em;
+}
+
 #content {
 	#pre-inner-content {
 		#inc-blurb {
@@ -313,11 +361,6 @@ and more scalable.
 			}
 		}
 		#inc-news {
-			background-color: @white;
-			text-align: center;
-			font-size: 0.8em;
-			color: @black;
-			padding-bottom: 0.5em;
 			#inc-news-pic {	
 				width: 100%;
 				height: 70px;
@@ -325,9 +368,6 @@ and more scalable.
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: 140px;
-			}
-			p {
-				margin-top: 0;
 			}
 		}
 		#geert-blog {
@@ -376,21 +416,20 @@ and more scalable.
 		}
 	}
 	#newsletter {
-		padding: 1.5em 0;
+		padding: 3em 0;
 		input {
 			width: 100%;
 			padding: 10px 0;
 			outline: none;
 			font-size: 0.8em;
-/*
-			&[type="text"] {
+			height: 50px;
+			&[type="email"] {
 				padding: 0 20px;
 				border: 1px solid darken(@grey, 10%);
 				margin-bottom: 15px;
 				font-weight: 300;
 				color: darken(@grey, 40%);
 			}
-*/
 			&[type="submit"] {
 				background-color: @link-color;
 				border: none;
@@ -406,17 +445,12 @@ and more scalable.
 }
 		.hentry {
 			padding-bottom: 30px;
+			color: @black;
 			header {
 				margin-top: 20px;
 				h1 {
 					font-size: 1.1em;
 					font-weight: 600;
-				}
-				.byline {
-					font-size: 0.8em;
-					color: darken(@grey, 60%);
-					margin-top: -0.5em;
-					margin-bottom: 1.5em;
 				}
 			}
 			footer {
@@ -564,24 +598,6 @@ and more scalable.
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
-
-#next {
-	#next-read {
-		color: darken(@grey, 60%);
-		font-size: 0.8em;
-		text-transform: uppercase;	
-	}
-	.next-post {
-		background-color: @white;
-		hentry {
-			padding-bottom: 1px;
-		}
-		.next-post-pic {
-			width: 100%;
-			height: 200px;
-		}
-	}
-}
 
 /******************************************************************
 09. PAGE NAVI STYLES

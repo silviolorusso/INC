@@ -32,6 +32,7 @@
 		<!-- fonts and icons -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600' rel='stylesheet' type='text/css'>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.infinitescroll.js"></script>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="container">
@@ -43,7 +44,10 @@
 						</a>
 					</p>
 					<div id="search">
-					    <input type="text" class="inputbox" alt="search" maxlength="20" name="s" id="s" size="15">
+						<form method="get" id="searchform" action="http://www.google.com/search">
+							<input type="text" class="inputbox" alt="search" maxlength="20" name="q" id="s" size="15">
+							<input type="radio" name="sitesearch" value="http://networkcultures.org" checked="" style="display:none;">
+			        	</form>			    
 					</div>
 				</div>
 			</header>

@@ -524,25 +524,22 @@ NAVIGATION STYLES
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
-.box .left {
-  font-size: 1em;
+.box .single {
+  min-height: 0;
+}
+.box .box-left {
+  width: 36%;
+  height: 100%;
+  float: left;
+  position: absolute;
+  border-right: 1px solid #f4f4f4;
+}
+.box .box-right {
+  float: right;
+  width: 64%;
 }
 .box .latest {
-  display: table-cell !important;
-  vertical-align: top;
-  padding: 0.5em 1em;
-  color: #8e8e8e;
-}
-.box .latest small {
-  text-transform: uppercase;
-}
-.box .latest h1 {
-  font-size: 1em;
-  margin-bottom: 0;
-  margin-top: 2px;
-}
-.box .latest .by {
-  font-size: 0.8em;
+  display: block;
 }
 #content #pre-inner-content #inc-blurb {
   font-size: 2em;
@@ -556,7 +553,7 @@ NAVIGATION STYLES
   font-size: 1em;
 }
 #content #pre-inner-content #inc-news #inc-news-pic {
-  height: 142px;
+  height: 115px;
   background-size: 200px;
 }
 #content #banner {
@@ -573,13 +570,23 @@ NAVIGATION STYLES
   width: 25%;
   font-size: 1.15em;
 }
-#content #newsletter {
-  text-align: center;
-}
 #content #newsletter input {
-  width: 35%;
+  width: 48%;
   font-size: 1.15em;
+  float: left;
+  margin-right: 2%;
 }
+.hentry header h1 {
+  font-size: 2.5em;
+}
+.hentry header .byline {
+  font-size: 1em;
+}
+.hentry p {
+  font-size: 1.5em;
+  padding-right: 8em;
+}
+/* end .hentry */
 /*********************
 SIDEBARS & ASIDES
 *********************/

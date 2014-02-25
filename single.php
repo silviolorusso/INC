@@ -16,9 +16,10 @@
 								<footer class="article-footer">
 									<div id="share">
 										<span>Share</span>
-										<a href="https://www.facebook.com/networkcultures"><i class="fa fa-facebook"></i></a>
-										<a href="https://twitter.com/INCAmsterdam"><i class="fa fa-twitter"></i></a>
-										<a href="https://twitter.com/INCAmsterdam"><i class="fa fa-envelope"></i></a>
+										<script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+        <a href="http://www.facebook.com/share.php?u=<full page url to share>" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"><i class="fa fa-facebook"></i></a>
+										<a href="https://twitter.com/share?url=<?php echo urlencode(the_permalink()); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+										<a href="mailto:?subject=<?php the_title(); ?>&amp;body=<?php the_permalink() ?>." title="Share by Email"><i class="fa fa-envelope"></i></a>
 									</div>
 									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 								</footer>
@@ -39,34 +40,57 @@
 						<?php endif; ?>
 					</div>
 					<div id="next" class="clearfix">
-						<span id="next-read">Next Readings</span>
+						<p id="next-read">Next Readings</p>
 						<?php
-						$the_query = new WP_Query('posts_per_page=3');
+						$currentId = get_the_ID();
+						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+						$args = array(
+							'posts_per_page' => 2,
+							'post__not_in' => array( $currentId ),
+							'paged' => $paged
+						);
+						$the_query = new WP_Query($args);
 						if ( $the_query->have_posts() ) { 
 							while ( $the_query->have_posts() ) {
 								$the_query->the_post(); ?>
-								<div class="next-post hentry">
-									<?php
-									$first_image = catch_that_image();
-									if ($first_image != '') { ?>
-									<div class="next-post-pic" style="background-image:url('<?php echo $first_image;?>')">
-									</div>
-									<?php } ?>
-									<div class="next-post-text">
-										<header>
-											<a href="<?php echo the_permalink(); ?>">
-												<h1><?php echo get_the_title(); ?></h1>
-											</a>
+								<div class="box clearfix">
+									<a href="<?php echo the_permalink(); ?>">
+										<?php
+											$first_image = catch_that_image();
+											if ($first_image != '') { ?>
+											<div class="box-left single" style="background-image:url('<?php echo $first_image;?>')">
+											</div>
+										<?php } else { ?>
+											<div class="box-left single excerpt">
+												<?php $excerpt = get_the_excerpt();
+												echo implode(' ', array_slice(explode(' ', $excerpt), 0, 10)). '...'; 
+												?>
+											</div>
+										<?php } ?>
+										<div class="box-right">
+											<h1><?php echo get_the_title(); ?></h1>
 											<p class="byline">By <?php echo get_the_author(); ?>, <?php echo get_the_date(); ?></p>
-										</header>
-										<p><?php echo get_the_excerpt(); ?></p>
-									</div>
+											<p class="content"><?php echo get_the_excerpt(); ?></p>
+										</div>
+									</a>
 								</div>
 							<?php } 
 						} else {
 							echo 'No posts found!';
-						}
-						wp_reset_postdata();
+						} ?>
+						<nav class="clearfix" id="nav-below">
+							<?php
+							$big = 999999999; // need an unlikely integer
+							
+							echo paginate_links( array(
+								'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+								'format' => '?paged=%#%',
+								'current' => max( 1, get_query_var('paged') ),
+								'total' => $the_query->max_num_pages
+							) );
+							?>
+						</nav>
+						<?php wp_reset_postdata();
 						?>
 					</div>
 				</div>

@@ -908,30 +908,74 @@ and more scalable.
   border: 1px solid #ff3300;
 }
 /* end .nav */
+#nav-below,
+#infscr-loading {
+  width: 100%;
+  text-align: center;
+}
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
 .box {
   background-color: #ffffff;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
+  position: relative;
   width: 100%;
 }
-.box .left {
-  vertical-align: top;
-  border-right: 1px solid #f4f4f4;
-  width: 36%;
-  font-size: 0.8em;
+.box .single {
+  min-height: 200px;
 }
-.box .left img {
+.box .excerpt {
+  text-align: left !important;
+  padding: 10px;
+}
+.box .box-left {
   width: 100%;
-}
-.box .left p {
-  padding: 0 20px 20px 20px;
-  margin: 0;
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
   text-align: center;
+}
+.box .box-left p {
+  margin-top: 0;
+  padding-left: 10px;
+}
+.box .box-left .index-pic {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+}
+.box .box-right {
+  width: 100%;
+  padding: 20px 20px 0 20px;
+  color: #8e8e8e;
+}
+.box .box-right small {
+  text-transform: uppercase;
+}
+.box .box-right h1 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  color: #ff3300;
+}
+.box .box-right .content a {
+  color: #222222;
 }
 .box .latest {
   display: none;
+}
+#next #next-read {
+  color: #5b5b5b;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+.byline {
+  font-size: 0.8em;
+  color: #5b5b5b;
+  margin-top: -0.5em;
+  margin-bottom: 1.5em;
 }
 #content #pre-inner-content #inc-blurb {
   font-weight: 300;
@@ -941,13 +985,6 @@ and more scalable.
 #content #pre-inner-content #inc-blurb p {
   margin-top: 1em;
 }
-#content #pre-inner-content #inc-news {
-  background-color: #ffffff;
-  text-align: center;
-  font-size: 0.8em;
-  color: #444444;
-  padding-bottom: 0.5em;
-}
 #content #pre-inner-content #inc-news #inc-news-pic {
   width: 100%;
   height: 70px;
@@ -955,9 +992,6 @@ and more scalable.
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 140px;
-}
-#content #pre-inner-content #inc-news p {
-  margin-top: 0;
 }
 #content #pre-inner-content #geert-blog {
   background-color: #ffffff;
@@ -1004,22 +1038,21 @@ and more scalable.
   text-transform: uppercase;
 }
 #content #newsletter {
-  padding: 1.5em 0;
+  padding: 3em 0;
 }
 #content #newsletter input {
   width: 100%;
   padding: 10px 0;
   outline: none;
   font-size: 0.8em;
-  /*
-			&[type="text"] {
-				padding: 0 20px;
-				border: 1px solid darken(@grey, 10%);
-				margin-bottom: 15px;
-				font-weight: 300;
-				color: darken(@grey, 40%);
-			}
-*/
+  height: 50px;
+}
+#content #newsletter input[type="email"] {
+  padding: 0 20px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 15px;
+  font-weight: 300;
+  color: #8e8e8e;
 }
 #content #newsletter input[type="submit"] {
   background-color: #ff3300;
@@ -1033,6 +1066,7 @@ and more scalable.
 }
 .hentry {
   padding-bottom: 30px;
+  color: #222222;
 }
 .hentry header {
   margin-top: 20px;
@@ -1040,12 +1074,6 @@ and more scalable.
 .hentry header h1 {
   font-size: 1.1em;
   font-weight: 600;
-}
-.hentry header .byline {
-  font-size: 0.8em;
-  color: #5b5b5b;
-  margin-top: -0.5em;
-  margin-bottom: 1.5em;
 }
 .hentry footer #share {
   color: #5b5b5b;
@@ -1119,21 +1147,6 @@ and more scalable.
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
-#next #next-read {
-  color: #5b5b5b;
-  font-size: 0.8em;
-  text-transform: uppercase;
-}
-#next .next-post {
-  background-color: #ffffff;
-}
-#next .next-post hentry {
-  padding-bottom: 1px;
-}
-#next .next-post .next-post-pic {
-  width: 100%;
-  height: 200px;
-}
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
@@ -1687,25 +1700,22 @@ NAVIGATION STYLES
   /*********************
 08. POSTS & CONTENT STYLES
 *********************/
-  .box .left {
-    font-size: 1em;
+  .box .single {
+    min-height: 0;
+  }
+  .box .box-left {
+    width: 36%;
+    height: 100%;
+    float: left;
+    position: absolute;
+    border-right: 1px solid #f4f4f4;
+  }
+  .box .box-right {
+    float: right;
+    width: 64%;
   }
   .box .latest {
-    display: table-cell !important;
-    vertical-align: top;
-    padding: 0.5em 1em;
-    color: #8e8e8e;
-  }
-  .box .latest small {
-    text-transform: uppercase;
-  }
-  .box .latest h1 {
-    font-size: 1em;
-    margin-bottom: 0;
-    margin-top: 2px;
-  }
-  .box .latest .by {
-    font-size: 0.8em;
+    display: block;
   }
   #content #pre-inner-content #inc-blurb {
     font-size: 2em;
@@ -1719,7 +1729,7 @@ NAVIGATION STYLES
     font-size: 1em;
   }
   #content #pre-inner-content #inc-news #inc-news-pic {
-    height: 142px;
+    height: 115px;
     background-size: 200px;
   }
   #content #banner {
@@ -1736,13 +1746,23 @@ NAVIGATION STYLES
     width: 25%;
     font-size: 1.15em;
   }
-  #content #newsletter {
-    text-align: center;
-  }
   #content #newsletter input {
-    width: 35%;
+    width: 48%;
     font-size: 1.15em;
+    float: left;
+    margin-right: 2%;
   }
+  .hentry header h1 {
+    font-size: 2.5em;
+  }
+  .hentry header .byline {
+    font-size: 1em;
+  }
+  .hentry p {
+    font-size: 1.5em;
+    padding-right: 8em;
+  }
+  /* end .hentry */
   /*********************
 SIDEBARS & ASIDES
 *********************/
