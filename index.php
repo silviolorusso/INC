@@ -7,7 +7,7 @@
 
 					<div class="box clearfix" id="inc-news">
 						<div class="box-left index">
-							<a href="#">
+							<a href="<?php echo home_url().'/blog'; ?>">
 								<div id="inc-news-pic">
 								</div>
 							</a>

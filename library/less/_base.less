@@ -35,7 +35,7 @@ and will be used across all viewports.
 *********************/
 
 html, body {
-	/* height: 100%; */
+	height: 100%;
 }
 body {
 	font-family: @sans-serif;
@@ -98,6 +98,9 @@ body {
 }
 #container {
 	margin-bottom: -120px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
 	&:after {
 		content: "";
 		display: block;
@@ -178,7 +181,7 @@ h5, .h5 {
 	width: 100%;
 	background-color: @white;
 	border-bottom: 1px solid @grey;
-	z-index: 9999999;
+	z-index: 999;
 	#inner-header {
 		height: 54px;
 		background-color: white;

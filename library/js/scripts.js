@@ -50,13 +50,14 @@ jQuery(document).ready(function($) {
 				right: "4.6%"
 			});
 			$(this).animate({
-				width: "250"
+				width: "200"
 			}, 500, function() { 
 				$(this).attr("placeholder","Enter your search...");
 			});
 			$('#logo').fadeOut();
 		});
 		$("#s").focusout(function() {
+			$(this).attr("placeholder","");
 			$("#s").animate({
 				width: "80"
 			}, 500, function() {
@@ -78,7 +79,7 @@ jQuery(document).ready(function($) {
 			$(this).attr('src',$(this).attr('data-gravatar'));
 		});
 		
-		// add placeholder text fro search
+		// add placeholder text for search
 		$("#s").attr("placeholder","Enter your search...");
 	}
 	// add all your scripts here
