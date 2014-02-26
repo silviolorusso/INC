@@ -81,6 +81,9 @@ jQuery(document).ready(function($) {
 		
 		// add placeholder text for search
 		$("#s").attr("placeholder","Enter your search...");
+		
+		// social button 2x
+		$("i").addClass('fa-2x');
 	}
 	// add all your scripts here
 	

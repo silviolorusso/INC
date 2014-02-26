@@ -8,10 +8,10 @@
 					CREATING TOMORROW
 				</p>
 				<div id="social">
-					<a href="https://www.facebook.com/networkcultures"><i class="fa fa-facebook fa-2x"></i></a>
-					<a href="https://twitter.com/INCAmsterdam"><i class="fa fa-twitter fa-2x"></i></a>
-					<a href="https://vimeo.com/networkcultures"><i class="fa fa-vimeo-square fa-2x"></i></a>
-					<a href="http://www.flickr.com/photos/networkcultures/"><i class="fa fa-flickr fa-2x"></i></a>
+					<a href="https://www.facebook.com/networkcultures"><i class="fa fa-facebook"></i></a>
+					<a href="https://twitter.com/INCAmsterdam"><i class="fa fa-twitter"></i></a>
+					<a href="https://vimeo.com/networkcultures"><i class="fa fa-vimeo-square"></i></a>
+					<a href="http://www.flickr.com/photos/networkcultures/"><i class="fa fa-flickr"></i></a>
 				</div>
 			</div>
 		</footer>
