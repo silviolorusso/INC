@@ -46,6 +46,8 @@ HEADER STYLES
 				width: 240px;
 				height: 33px;
 				margin-top: 25px;
+				background-position: 95% center;
+				background-size: 18px;
 			}
 		}
 	}
@@ -225,6 +227,9 @@ NAVIGATION STYLES
 	} /* end .hentry */
 
 
+#map {
+	height: 500px;
+}
 	
 
 /*********************
@@ -354,24 +359,16 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
-.footer-links {
-	ul {
-		li {
-			a {
-				&:hover {}
-			}
-			/*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/
-			ul {}
+.footer {
+	#inner-footer {
+		#creating-tomorrow {
+			font-size: 0.8em;
+		}
+		#createit {
+			width: 84px;
+			height: 48px;
+			margin-left: 50px;
 		}
 	}
-} /* end .footer-links */
+}
 

@@ -7,6 +7,8 @@
 					of Applied Sciences<br/>
 					CREATING TOMORROW
 				</p>
+				<div id="createit">
+				</div>
 				<div id="social">
 					<a href="https://www.facebook.com/networkcultures"><i class="fa fa-facebook"></i></a>
 					<a href="https://twitter.com/INCAmsterdam"><i class="fa fa-twitter"></i></a>

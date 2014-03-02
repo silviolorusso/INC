@@ -5,7 +5,73 @@ Template Name: Contacts
 ?>
 
 <?php get_header(); ?>
-			<iframe id="map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Rhijnspoorplein,+Weesperbuurt+en+Plantage,+Amsterdam,+The+Netherlands&amp;aq=0&amp;oq=rhijnpoo&amp;sll=52.36026,4.908632&amp;sspn=0.0095,0.021822&amp;ie=UTF8&amp;hq=&amp;hnear=Rhijnspoorplein,+Amsterdam,+The+Netherlands&amp;t=m&amp;z=14&amp;ll=52.36026,4.908632&amp;output=embed"></iframe>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAswWfZD8B23KWA0pE3qpV6_P3YcbBVTgo&sensor=false&extension=.js"></script> 
+			<script> google.maps.event.addDomListener(window, 'load', init);
+			
+			var map;
+			
+			function init() {
+			    var mapOptions = {
+			        center: new google.maps.LatLng(52.359883,4.909629),
+			        zoom: 17,
+			        zoomControl: true,
+			        zoomControlOptions: {
+			            style: google.maps.ZoomControlStyle.SMALL,
+			        },
+			        disableDoubleClickZoom: true,
+			        mapTypeControl: true,
+			        mapTypeControlOptions: {
+			            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+			        },
+			        scaleControl: false,
+			        scrollwheel: false,
+			        streetViewControl: true,
+			        draggable : true,
+			        overviewMapControl: true,
+			        overviewMapControlOptions: {
+			            opened: false,
+			        },
+			        mapTypeId: google.maps.MapTypeId.ROADMAP,
+			    styles: [
+									{
+										// Style the map with the custom hue
+										stylers: [
+											{ "hue":"#dd0d0d" }
+										]
+									},
+									{
+										// Remove road labels
+										featureType:"road",
+										elementType:"labels",
+										stylers: [
+											{ "visibility":"off" }
+										]
+									},
+									{
+										// Style the road
+										featureType:"road",
+										elementType:"geometry",
+										stylers: [
+											{ "lightness":100 },
+											{ "visibility":"simplified" }
+										]
+									}
+								],
+			    
+			    }
+			
+			    var mapElement = document.getElementById('map');
+			    var map = new google.maps.Map(mapElement, mapOptions);
+			
+			    marker = new google.maps.Marker({
+		            icon: '',
+		            position: new google.maps.LatLng(52.359883,4.909629),
+		            map: map
+		        });
+			}
+			</script> 
+			<div id="map">
+			</div>
 			<div id="content">
 				<div id="inner-content" class="wrap clearfix">
 					<div id="main" class="clearfix" role="main">

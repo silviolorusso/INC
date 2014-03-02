@@ -40,7 +40,7 @@
 				<div id="inner-header" class="wrap clearfix">
 					<p id="logo" class="h1">
 						<a href="<?php echo home_url(); ?>" rel="nofollow">
-							<img src="<?php echo get_template_directory_uri(); ?>/library/images/inc-logos/19.gif" alt="<?php bloginfo('name'); ?>" />
+							<img src="<?php echo get_template_directory_uri(); ?>/library/images/inc-logos/inc_logo1@2x.png" alt="<?php bloginfo('name'); ?>" />
 						</a>
 					</p>
 					<div id="search">
