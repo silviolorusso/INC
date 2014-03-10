@@ -85,7 +85,15 @@ jQuery(document).ready(function($) {
 		// social button 2x
 		$("i").addClass('fa-2x');
 	}
-	// add all your scripts here
+	
+	// Fitvid to fit video size on window resize
+	function fitvid() {
+		jQuery(function($){ 
+			$('.entry-content').fitVids();
+			$(".entry-content").fitVids({ customSelector: "iframe[src^='http://issuu.com'], iframe[src^='http://www.slideshare.net']"});
+		});
+	}
+	fitvid();
 	
 	// infinite scroll 
 	$('#next').infinitescroll({
@@ -97,7 +105,6 @@ jQuery(document).ready(function($) {
 	                   // selector for all items you'll retrieve
 	    loadingText  : "mimmo",
 	  });
-	
 }); /* end of as page load scripts */
 
 

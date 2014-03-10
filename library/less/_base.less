@@ -618,12 +618,88 @@ and more scalable.
 		.size-large {}
 		.size-medium {}
 		.size-thumbnail {}
-		
+
+/* contacts */		
 #map {
 	width: 100%;
 	height: 320px;
 	margin-top: 1em;
 }
+
+
+/* publications */
+/*-----------------------------------------------------------------------------
+	Publications
+-----------------------------------------------------------------------------*/
+div#page-publications div#maincontent .content {
+    padding: 70px 30px 0px 5px;
+}
+div#pub-menu {
+	background-color: @white;
+	padding: 1em;
+    ul {
+	    list-style: none;
+	    margin: 0;
+	    li {
+		    float: left;
+		    padding-left: 5px;
+		    padding-right: 5px;
+		    margin-right: 7px;
+		    background: none;
+		    color: @link-color;
+		    margin-top: 0.3em;
+		    margin-bottom: 0.3em;
+		    cursor: pointer;
+		}
+		li.current {
+		    background-color: @link-color !important;
+		    color: @white !important;   
+		} 
+    }
+}
+div#pub-desc {
+    margin-bottom: 30px;
+    min-height: 80px; 
+}
+div#pub-desc p {
+    display: none;
+}
+
+div.publication {
+	font-size: 0.9em;
+	div.cover {
+	    background-color: @darkgrey;
+	    height: 300px;    
+	    text-align: center;
+	    padding-top: 20px;
+	    padding-bottom: 20px;
+	    &:hover {
+		    background-color: @white;
+	    }
+	}
+	div.cover img {
+	    height: 260px;  
+	    width: auto; 
+	}
+	p.categories {
+	    font-size: 10px;
+	    margin-bottom: 0;
+	}
+	a.pub-title p {
+	    margin-bottom: 15px;
+	}
+	div.info p {
+	    margin-bottom: 10px;
+	}
+	div.info span {
+	    color: #ff3300;
+	}
+	div.download {
+	    text-align: right;
+	}
+}
+
+
 
 /******************************************************************
 09. PAGE NAVI STYLES

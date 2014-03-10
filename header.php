@@ -33,6 +33,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600' rel='stylesheet' type='text/css'>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.infinitescroll.js"></script>
+		<!-- FitVids -->
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.fitvids.js"></script>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="container">
