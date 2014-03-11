@@ -35,6 +35,9 @@
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.infinitescroll.js"></script>
 		<!-- FitVids -->
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.fitvids.js"></script>
+		<!-- ScrollTo -->
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.localScroll.min.js"></script>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="container">

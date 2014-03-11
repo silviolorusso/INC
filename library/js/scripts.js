@@ -105,6 +105,9 @@ jQuery(document).ready(function($) {
 	                   // selector for all items you'll retrieve
 	    loadingText  : "mimmo",
 	  });
+	  
+	  // ScrollTo
+	  $.localScroll({offset:-140});
 }); /* end of as page load scripts */
 
 

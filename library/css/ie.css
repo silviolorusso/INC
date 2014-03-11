@@ -534,12 +534,13 @@ NAVIGATION STYLES
 }
 .box .single {
   min-height: 0;
+  position: absolute;
 }
 .box .box-left {
   width: 36%;
   height: 100%;
   float: left;
-  position: absolute;
+  /* position: absolute; */
   border-right: 1px solid #f4f4f4;
 }
 .box .box-right {
