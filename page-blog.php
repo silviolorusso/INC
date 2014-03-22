@@ -8,7 +8,7 @@ Template Name: Blog
 			<div id="content">
 				<div id="inner-content" class="wrap clearfix">
 					<div id="next" class="clearfix">
-						<h1 class="title-out">Latest posts</h1>
+						<h1 class="title-out">Updates from the INC</h1>
 						<?php
 						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 						$args = array(

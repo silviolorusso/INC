@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
 			$(this).animate({
 				width: "200"
 			}, 500, function() { 
-				$(this).attr("placeholder","Enter your search...");
+				$(this).attr("placeholder","Search");
 			});
 			$('#logo').fadeOut();
 		});
@@ -80,7 +80,7 @@ jQuery(document).ready(function($) {
 		});
 		
 		// add placeholder text for search
-		$("#s").attr("placeholder","Enter your search...");
+		$("#s").attr("placeholder","Search");
 		
 		// social button 2x
 		$("i").addClass('fa-2x');

@@ -74,21 +74,22 @@ Template Name: Publications
 			                            echo $category->slug ;
 			                    }        
 			                ?>">
-			            <p class="categories">
-			                <?php 
-			                    foreach ($categories as $category) {
-			                            echo $category->cat_name ;
-			                    }        
-			                ?>
-			            </p>
 			            <a href="<?php echo get_permalink($id) ?>">
 			                <div class="cover">
 			                    <img src="<?php echo types_render_field("pub-cover", array('output'=>'raw')); ?>" />
 			                </div>
 			            </a>
 						<div class="entry">
-							<p>
-							     <a class="pub-title" href="<?php echo get_permalink($id) ?>"><p><?php echo get_the_title($id) ?></p></a>
+							<p class="categories">
+			                <?php 
+			                    foreach ($categories as $category) {
+			                            echo $category->cat_name ;
+			                    }        
+			                ?>
+			                </p>
+							<p class="pub-title">
+							     <a href="<?php echo get_permalink($id) ?>"><?php echo get_the_title($id) ?></a>
+							</p>
 				                <?php echo get_the_excerpt(); ?> | 
 				                <?php 
 							     $download = types_render_field("pub-download", array('output'=>'raw'));

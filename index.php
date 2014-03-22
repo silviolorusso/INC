@@ -11,7 +11,7 @@
 								<div id="inc-news-pic">
 								</div>
 							</a>
-							<p>Latest Updates from the INC</p>
+							<p>Updates from the INC</p>
 						</div>
 						<div class="box-right latest">
 							<small>Latest Post</small>
@@ -35,7 +35,7 @@
 					
 					<a href="http://networkcultures.org/wpmu/geert/">
 						<div id="geert-blog">
-							<p>Net Critique. Blog by Geert Lovink</p>
+							<p>net critique blog by Geert Lovink</p>
 						</div>
 					</a>
 				</div>
@@ -100,7 +100,7 @@
 				<a href="#">
 					<div id="inc-pubs">
 						<div id="inc-pubs-button">
-							See All Publications
+							See all INC publications
 						</div>
 					</div>
 				</a>
@@ -109,7 +109,7 @@
 						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Add your email..." required>
 					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 					    <div style="position: absolute; left: -5000px;"><input type="text" name="b_23551d685d17186a250c5a373_a9358e73df" value=""></div>
-						<div class="clear"><input type="submit" value="Subscribe to INC Newsletter" name="subscribe" id="mc-embedded-subscribe"></div>
+						<div class="clear"><input type="submit" value="Subscribe to the INC newsletter" name="subscribe" id="mc-embedded-subscribe"></div>
 					</form>
 				</div>
 			</div>

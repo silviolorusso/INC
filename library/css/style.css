@@ -1223,11 +1223,12 @@ div.publication div.cover img {
   width: auto;
 }
 div.publication p.categories {
-  font-size: 10px;
   margin-bottom: 0;
+  font-weight: 100;
 }
-div.publication a.pub-title p {
-  margin-bottom: 15px;
+div.publication .pub-title {
+  font-weight: 600;
+  margin: 0;
 }
 div.publication div.info p {
   margin-bottom: 10px;
