@@ -544,6 +544,7 @@ NAVIGATION STYLES
   border-right: 1px solid #f4f4f4;
 }
 .box .box-right {
+  border-left: 1px solid #f4f4f4;
   float: right;
   width: 64%;
 }
