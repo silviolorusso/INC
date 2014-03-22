@@ -87,9 +87,22 @@ Template Name: Publications
 			                </div>
 			            </a>
 						<div class="entry">
-						     <a class="pub-title" href="<?php echo get_permalink($id) ?>"><p><?php echo get_the_title($id) ?></p></a>
-			                <?php the_excerpt('33'); ?>
+							<p>
+							     <a class="pub-title" href="<?php echo get_permalink($id) ?>"><p><?php echo get_the_title($id) ?></p></a>
+				                <?php echo get_the_excerpt(); ?> | 
+				                <?php 
+							     $download = types_render_field("pub-download", array('output'=>'raw'));
+							     if($download != '') {
+							         echo '<a href="' . $download . '">Download PDF</a>';
+							     }
+							     $buy = types_render_field("pub-buy", array('output'=>'raw'));
+							     if($buy != '') {
+							         echo '<a href="' . $buy . '">Buy the book</a>';
+							     }
+							     ?>
+							</p>
 						</div>
+<!--
 						<div class="info">
 			                <p>
 			                    <span>Info: </span><?php echo types_render_field("pub-info", array('output'=>'raw')); ?>
@@ -107,6 +120,7 @@ Template Name: Publications
 						     }
 						     ?>
 						</div>
+-->
 					</div>
 					<?php
 			        endwhile;

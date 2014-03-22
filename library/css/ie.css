@@ -597,7 +597,11 @@ NAVIGATION STYLES
 }
 /* end .hentry */
 #map {
-  height: 500px;
+  height: 200px;
+}
+/* publications */
+div#pub-menu ul li {
+  float: left;
 }
 /*********************
 SIDEBARS & ASIDES
@@ -642,6 +646,9 @@ FOOTER STYLES
   width: 84px;
   height: 48px;
   margin-left: 50px;
+}
+.footer #inner-footer #social i {
+  margin-left: 15px;
 }
 /******************************************************************
 Site Name: 

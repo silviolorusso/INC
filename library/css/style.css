@@ -948,7 +948,10 @@ and more scalable.
 }
 .box .excerpt {
   text-align: left !important;
-  padding: 10px;
+  padding: 15px;
+  background-color: #444444;
+  color: #ffffff;
+  font-size: 1.3em;
 }
 .box .box-left {
   width: 100%;
@@ -1171,13 +1174,10 @@ and more scalable.
 /* contacts */
 #map {
   width: 100%;
-  height: 320px;
+  height: 150px;
   margin-top: 1em;
 }
 /* publications */
-/*-----------------------------------------------------------------------------
-	Publications
------------------------------------------------------------------------------*/
 div#page-publications div#maincontent .content {
   padding: 70px 30px 0px 5px;
 }
@@ -1190,7 +1190,6 @@ div#pub-menu ul {
   margin: 0;
 }
 div#pub-menu ul li {
-  float: left;
   padding-left: 5px;
   padding-right: 5px;
   margin-right: 7px;
@@ -1215,14 +1214,9 @@ div.publication {
   font-size: 0.9em;
 }
 div.publication div.cover {
-  background-color: #444444;
-  height: 300px;
+  height: 270px;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-div.publication div.cover:hover {
-  background-color: #ffffff;
+  padding-top: 10px;
 }
 div.publication div.cover img {
   height: 260px;
@@ -1516,7 +1510,7 @@ div.publication div.download {
   float: right;
 }
 .footer #inner-footer #social i {
-  margin-left: 15px;
+  margin-left: 5px;
   color: #ffffff;
 }
 /*
@@ -1880,7 +1874,11 @@ NAVIGATION STYLES
   }
   /* end .hentry */
   #map {
-    height: 500px;
+    height: 200px;
+  }
+  /* publications */
+  div#pub-menu ul li {
+    float: left;
   }
   /*********************
 SIDEBARS & ASIDES
@@ -1925,6 +1923,9 @@ FOOTER STYLES
     width: 84px;
     height: 48px;
     margin-left: 50px;
+  }
+  .footer #inner-footer #social i {
+    margin-left: 15px;
   }
 }
 /*
