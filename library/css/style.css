@@ -925,11 +925,11 @@ and more scalable.
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
-.project {
+.projectbox {
   height: 250px !important;
   padding: 20px;
 }
-.project .project-pic {
+.projectbox .project-pic {
   width: 100%;
   height: 150px;
   background-size: 100%;
@@ -950,7 +950,7 @@ and more scalable.
   text-align: left !important;
   padding: 15px;
   background-color: #444444;
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 1.3em;
 }
 .box .box-left {
@@ -959,10 +959,12 @@ and more scalable.
   background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
+  color: #222222;
 }
 .box .box-left p {
   margin-top: 0;
-  padding-left: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .box .box-left .index-pic {
   width: 100%;
@@ -1047,7 +1049,7 @@ and more scalable.
   background-color: #ffffff;
   background-image: url('../images/inc-pubs.jpg');
   background-position: center center;
-  background-size: auto auto;
+  background-size: 200% auto;
   padding-top: 80px;
 }
 #content #inc-pubs div {
@@ -1060,6 +1062,7 @@ and more scalable.
   font-weight: 800;
   font-size: 0.8em;
   text-transform: uppercase;
+  border: 1px solid #ff3300;
 }
 #content #newsletter {
   padding: 3em 0;
@@ -1097,7 +1100,8 @@ and more scalable.
 }
 .hentry header h1 {
   font-size: 1.1em;
-  font-weight: 600;
+  color: #5b5b5b;
+  font-weight: 300;
 }
 .hentry footer #share {
   color: #5b5b5b;
@@ -1153,8 +1157,6 @@ and more scalable.
 /* end .entry-content */
 .wp-caption {
   max-width: 100%;
-  background: #eee;
-  padding: 5px;
   /* images inside wp-caption */
 }
 .wp-caption img {
@@ -1163,9 +1165,9 @@ and more scalable.
   width: 100%;
 }
 .wp-caption p.wp-caption-text {
-  font-size: 0.85em;
+  font-size: 0.95em;
   margin: 4px 0 7px;
-  text-align: center;
+  padding: 0;
 }
 /* end .wp-caption */
 /* image gallery styles */
@@ -1731,16 +1733,16 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
   .header #inner-header {
-    height: 89px;
+    height: 60px;
   }
   .header #inner-header #logo a img {
     height: 50px;
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .header #inner-header #search input {
     width: 240px;
     height: 33px;
-    margin-top: 25px;
+    margin-top: 18px;
     background-position: 95% center;
     background-size: 18px;
   }
@@ -1748,7 +1750,7 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
   #main-nav {
-    padding-top: 90px;
+    padding-top: 70px;
   }
   .nav {
     /* end .menu ul li */
@@ -1804,7 +1806,7 @@ NAVIGATION STYLES
   /*********************
 08. POSTS & CONTENT STYLES
 *********************/
-  .project .box-left {
+  .projectbox .box-left {
     width: 100% !important;
     float: none !important;
     position: static !important;
@@ -1852,7 +1854,10 @@ NAVIGATION STYLES
     max-width: 960px;
   }
   #content .title-out {
-    font-size: 2em;
+    font-size: 2.3em;
+  }
+  #content #inc-pubs {
+    background-size: 70% auto;
   }
   #content #inc-pubs div {
     width: 25%;
@@ -1865,13 +1870,13 @@ NAVIGATION STYLES
     margin-right: 2%;
   }
   .hentry header h1 {
-    font-size: 2.5em;
+    font-size: 2.3em;
   }
   .hentry header .byline {
     font-size: 1em;
   }
   .hentry p {
-    font-size: 1.5em;
+    font-size: 1.4em;
     padding-right: 8em;
   }
   /* end .hentry */

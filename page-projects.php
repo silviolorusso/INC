@@ -27,7 +27,7 @@ Template Name: Projects
 									$pos = 'last';
 								}
 								?>
-								<div class="box clearfix project sixcol <?php echo $pos; ?>">
+								<div class="box clearfix projectbox sixcol <?php echo $pos; ?>">
 									<a href="<?php echo the_permalink(); ?>">
 										<?php 
 										$banner = types_render_field("project-banner", array('output'=>'raw')); 

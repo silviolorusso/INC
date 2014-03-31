@@ -107,7 +107,7 @@ jQuery(document).ready(function($) {
 	  });
 	  
 	  // ScrollTo
-	  $.localScroll({offset:-140});
+	  $.localScroll({offset:-110});
 }); /* end of as page load scripts */
 
 

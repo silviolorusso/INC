@@ -293,7 +293,7 @@ and more scalable.
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
-.project {
+.projectbox {
 	height: 250px !important;
 	padding: 20px;
 	.project-pic {
@@ -317,7 +317,7 @@ and more scalable.
 		text-align: left !important;
 		padding: 15px;
 		background-color: @darkgrey;
-		color: @white;
+		color: @white !important;
 		font-size: 1.3em;
 	}
 	.box-left {
@@ -326,9 +326,11 @@ and more scalable.
 		background-size: 100%;
 		background-repeat: no-repeat;
 		text-align: center;
+		color: @black;
 		p {
 			margin-top: 0;
-			padding-left: 10px;
+			padding-left: 15px;
+			padding-right: 15px;
 		}
 		.index-pic {
 			width: 100%;
@@ -424,7 +426,7 @@ and more scalable.
 		background-color: @white;
 		background-image: url('../images/inc-pubs.jpg');
 		background-position: center center;
-		background-size: auto auto;
+		background-size: 200% auto;
 		padding-top: 80px;
 		div {
 			margin-left: auto;
@@ -436,6 +438,7 @@ and more scalable.
 			font-weight: 800;
 			font-size: 0.8em;
 			text-transform: uppercase;
+			border: 1px solid @link-color;
 		}
 	}
 	#newsletter {
@@ -473,7 +476,8 @@ and more scalable.
 				margin-top: 20px;
 				h1 {
 					font-size: 1.1em;
-					font-weight: 600;
+					color: darken(@grey, 60%);
+					font-weight: 300;
 				}
 			}
 			footer {
@@ -584,8 +588,6 @@ and more scalable.
 
 		.wp-caption {
 			max-width: 100%;
-			background: #eee;
-			padding: 5px;
 			/* images inside wp-caption */
 			img {
 				max-width: 100%;
@@ -593,9 +595,9 @@ and more scalable.
 				width: 100%;
 			}
 			p.wp-caption-text {
-				font-size: 0.85em;
+				font-size: 0.95em;
 				margin: 4px 0 7px;
-				text-align: center;
+				padding: 0;
 			}
 		} /* end .wp-caption */
 		/* image gallery styles */
