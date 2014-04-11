@@ -206,20 +206,6 @@ function my_plugin_options() {
     $pre_opt_val2 = get_option( $pre_opt_name2 );
     $pre_opt_val3 = get_option( $pre_opt_name3 );
     
-    // single projects
-    $opts = array();
-    for ($i = 1; $i <= 5; $i++) {
-    	array_push($opts, 'project_'.$i.'_banner_url');
-    	array_push($opts, 'project_'.$i.'_desc');
-    	array_push($opts, 'project_'.$i.'_feed_url');
-    } 
-    $opts_val = array();
-    // Read in existing option value from database
-    foreach ($opts as $opt) {
-    	$opt_val = get_option($opt);
-    	array_push($opts_val, $opt_val);
-    }
-    
 
     // See if the user has posted us some information
     // If they did, this hidden field will be set to 'Y'
@@ -232,11 +218,7 @@ function my_plugin_options() {
         update_option( $pre_opt_name, $pre_opt_val );
         update_option( $pre_opt_name2, $pre_opt_val2 );
         update_option( $pre_opt_name3, $pre_opt_val3 );
-        
-        foreach ($opts as $opt) {
-	    	$opt_val = $_POST[ $opt ];
-	    	update_option( $opt, $opt_val );
-	    }
+
         // Put a settings updated message on the screen
 	?>
 	<div class="updated"><p><strong><?php _e('settings saved.', 'menu-test' ); ?></strong></p></div>
@@ -264,19 +246,6 @@ function my_plugin_options() {
 			<input type="text" name="<?php echo $pre_opt_name2; ?>" id="upload_imageNaN" value="<?php echo $pre_opt_val2; ?>" size='100' /><br/>
 			Banner URL: <input type="text" name="<?php echo $pre_opt_name3; ?>" value="<?php echo $pre_opt_val3; ?>" size='40' />
 			<hr />
-			
-			<?php 
-			$k = 0;
-			for ($i = 1; $i <= 5; $i++) { ?>
-				<p><?php _e("Project #".($i), 'menu-test' ); ?></p>
-				<input type="button" class='button-secondary upload_image_button' value="Upload Banner" no="<?php echo $k; ?>" />
-				<input type="text" name="<?php echo $opts[$k]; ?>" id="upload_image<?php echo $k; ?>" value="<?php echo $opts_val[$k]; ?>" size='100' /><br/>
-				Project description: <input type="text" name="<?php echo $opts[($k+1)]; ?>" value="<?php echo $opts_val[($k+1)]; ?>" size='80' /><br/>
-				Project feed: <input type="text" name="<?php echo $opts[($k+2)]; ?>" value="<?php echo $opts_val[($k+2)]; ?>" size='80' />
-				<hr />
-				<?php 
-				$k += 3;
-			} ?>
 			
 			<p class="submit">
 				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />

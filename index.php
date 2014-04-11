@@ -52,12 +52,11 @@
 				<div id="current-projects" class="wrap clearfix">
 					<h1 class="title-out">Current Projects</h1>
 				</div>
-				<!-- projects here -->
+				<!-- projects here: new versions -->
 				<div id="inner-content" class="wrap clearfix">
 					<div id="main" class="twelvecol first last clearfix" role="main">
 						<?php
 						include_once('library/parse-feed.php');
-						
 						function projectBox($banner, $description, $feedURL) {
 							if (($banner != '') && ($description != '') && ($feedURL != '')) {						
 								$feed = getFeed($feedURL);
@@ -88,15 +87,22 @@
 								</div>
 						<?php } 
 						}
-					    for ($i = 1; $i <= 5; $i++) {
-						    $banner = get_option('project_'.$i.'_banner_url');
-						    $desc = get_option('project_'.$i.'_desc');
-						    $feedURL = get_option('project_'.$i.'_feed_url');
-					    	projectBox($banner, $desc, $feedURL);
-					    }
+						$the_query = new WP_Query('post_type=blogfeed');
+						if ( $the_query->have_posts() ) { 
+							while ( $the_query->have_posts() ) {
+								$the_query->the_post();
+								$banner = wp_get_attachment_url( get_post_thumbnail_id() );
+							    $desc = get_the_content();
+							    $feedURL = get_the_title();
+						    	projectBox($banner, $desc, $feedURL);
+						    } 
+						} else {
+							echo 'No posts found!';
+						}
+						wp_reset_postdata();
 						?>
 					</div>
-				</div>
+				</div>				
 				<a href="#">
 					<div id="inc-pubs">
 						<div id="inc-pubs-button">
