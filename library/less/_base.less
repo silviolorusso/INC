@@ -316,7 +316,7 @@ and more scalable.
 	.excerpt {
 		text-align: left !important;
 		padding: 15px;
-		background-color: @darkgrey;
+		background-color: darken(@grey, 40%);
 		color: @white !important;
 		font-size: 1.3em;
 	}
@@ -343,11 +343,13 @@ and more scalable.
 		width: 100%;
 		padding: 20px 20px 0 20px;
 		color: darken(@grey, 40%);
+		min-height: 180px;
 		small {
 			text-transform: uppercase;
 		}
 		h1 {
-			font-size: 1em;
+			font-size: 1.5em;
+			font-weight: 700;
 			margin-bottom: 10px;
 			margin-top: 2px;
 			color: @link-color;
@@ -517,10 +519,15 @@ and more scalable.
 		/* entry content */
 		.entry-content {
 
-			p {}
+			p {
+			}
 
 
-			ul, ol, table, dl {}
+			ul, ol, table, dl {
+				font-size: 1.4em;
+				padding-right: 8em;
+				list-style-type: disc;
+			}
 
 			ul, ol {
 

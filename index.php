@@ -24,7 +24,7 @@
 											<h1><?php echo get_the_title(); ?></h1>
 									</a>
 									<span class="byline">By <?php echo get_the_author(); ?>, <?php echo get_the_date(); ?></span>
-									<p><?php echo get_the_excerpt(); ?></p>
+									<p><?php echo the_excerpt(); ?></p>
 								<?php } 
 							} else {
 								echo 'No posts found!';

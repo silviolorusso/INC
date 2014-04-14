@@ -43,11 +43,9 @@
 						<p id="next-read">Next Readings</p>
 						<?php
 						$currentId = get_the_ID();
-						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 						$args = array(
 							'posts_per_page' => 3,
 							'post__not_in' => array( $currentId ),
-							'paged' => $paged
 						);
 						$the_query = new WP_Query($args);
 						if ( $the_query->have_posts() ) { 
@@ -78,20 +76,7 @@
 						} else {
 							echo 'No posts found!';
 						} ?>
-						<nav class="clearfix" id="nav-below">
-							<?php
-							$big = 999999999; // need an unlikely integer
-							
-							echo paginate_links( array(
-								'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-								'format' => '?paged=%#%',
-								'current' => max( 1, get_query_var('paged') ),
-								'total' => $the_query->max_num_pages
-							) );
-							?>
-						</nav>
-						<?php wp_reset_postdata();
-						?>
+						<?php wp_reset_postdata();?>
 					</div>
 				</div>
 			</div>
