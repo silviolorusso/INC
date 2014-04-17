@@ -133,7 +133,6 @@ a, a:visited {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-family: @sans-serif;
 	text-rendering: optimizelegibility;
-	font-weight: 400;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -146,30 +145,22 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
-	line-height: 1.333em;
+	color: #5b5b5b; 
+	font-weight: 500;
+	font-size: 1.5em;
 }
 
 h2, .h2 {
-	font-size: 1.75em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
-}
-
-h3, .h3 {
-	font-size: 1.125em;
-}
-
-h4, .h4 {
-	font-size: 1.1em;
+	color: #555; 
+	font-size: 1em; 
 	font-weight: 700;
 }
 
-h5, .h5 {
-	font-size: 0.846em;
-	line-height: 2.09em;
+h3, .h3 {
+	color: #222; 
+	font-weight: 700; 
 	text-transform: uppercase;
-	letter-spacing: 2px;
+	font-size: 0.9em;
 }
 
 /*********************
@@ -246,8 +237,13 @@ and more scalable.
 		padding: 10px;
 		border: 1px solid transparent;
 		a {
+			font-weight: 600;
 			text-decoration: none;
 			padding: 10px 10px;
+			&:hover {
+				background-color: @link-color;
+				color: @white;
+			}
 		}
 		&:first-child {
 			display: none;
@@ -310,6 +306,9 @@ and more scalable.
 	margin-bottom: 1em;
 	position: relative;
 	width: 100%;
+	&:hover {
+		box-shadow: 1px 1px 0px 0px @link-color;
+	}
 	.single {
 		min-height: 200px;
 	}
@@ -441,6 +440,10 @@ and more scalable.
 			font-size: 0.8em;
 			text-transform: uppercase;
 			border: 1px solid @link-color;
+			&:hover {
+				background-color: @link-color;
+				color: @white;
+			}
 		}
 	}
 	#newsletter {
@@ -464,7 +467,15 @@ and more scalable.
 				text-transform: uppercase;
 				font-weight: 600;
 				color: @white;
+				border: solid 1px @link-color; 
+				&:hover {
+					background: @white; 
+					color: @link-color;
+				}
 			} 
+			&:focus {
+				border: solid 1px @link-color;
+			}
 		}
 	}
 }
@@ -476,11 +487,6 @@ and more scalable.
 			color: @black;
 			header {
 				margin-top: 20px;
-				h1 {
-					font-size: 1.1em;
-					color: darken(@grey, 60%);
-					font-weight: 300;
-				}
 			}
 			footer {
 				#share {
@@ -548,9 +554,11 @@ and more scalable.
 			}
 
 			blockquote {
-
-				&:before {}
-
+				margin-left: 0px; 
+				padding-left: 1em; 
+				border-left: 3px solid #ccc; 
+				padding-left: 1em; 
+				color: #999;
 			}
 
 			dl {}

@@ -770,7 +770,6 @@ h5,
 .h5 {
   font-family: 'Open Sans', sans-serif;
   text-rendering: optimizelegibility;
-  font-weight: 400;
   /*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -791,30 +790,22 @@ h5 a,
 }
 h1,
 .h1 {
-  font-size: 2.5em;
-  line-height: 1.333em;
+  color: #5b5b5b;
+  font-weight: 500;
+  font-size: 1.5em;
 }
 h2,
 .h2 {
-  font-size: 1.75em;
-  line-height: 1.4em;
-  margin-bottom: 0.375em;
+  color: #555;
+  font-size: 1em;
+  font-weight: 700;
 }
 h3,
 .h3 {
-  font-size: 1.125em;
-}
-h4,
-.h4 {
-  font-size: 1.1em;
+  color: #222;
   font-weight: 700;
-}
-h5,
-.h5 {
-  font-size: 0.846em;
-  line-height: 2.09em;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 0.9em;
 }
 /*********************
 06. HEADER STYLES
@@ -899,8 +890,13 @@ and more scalable.
 		*/
 }
 .nav li a {
+  font-weight: 600;
   text-decoration: none;
   padding: 10px 10px;
+}
+.nav li a:hover {
+  background-color: #ff3300;
+  color: #ffffff;
 }
 .nav li:first-child {
   display: none;
@@ -942,6 +938,9 @@ and more scalable.
   margin-bottom: 1em;
   position: relative;
   width: 100%;
+}
+.box:hover {
+  box-shadow: 1px 1px 0px 0px #ff3300;
 }
 .box .single {
   min-height: 200px;
@@ -1066,6 +1065,10 @@ and more scalable.
   text-transform: uppercase;
   border: 1px solid #ff3300;
 }
+#content #inc-pubs div:hover {
+  background-color: #ff3300;
+  color: #ffffff;
+}
 #content #newsletter {
   padding: 3em 0;
 }
@@ -1089,6 +1092,14 @@ and more scalable.
   text-transform: uppercase;
   font-weight: 600;
   color: #ffffff;
+  border: solid 1px #ff3300;
+}
+#content #newsletter input[type="submit"]:hover {
+  background: #ffffff;
+  color: #ff3300;
+}
+#content #newsletter input:focus {
+  border: solid 1px #ff3300;
 }
 #inner-content {
   padding-bottom: 1em;
@@ -1099,11 +1110,6 @@ and more scalable.
 }
 .hentry header {
   margin-top: 20px;
-}
-.hentry header h1 {
-  font-size: 1.1em;
-  color: #5b5b5b;
-  font-weight: 300;
 }
 .hentry footer #share {
   color: #5b5b5b;
@@ -1142,6 +1148,12 @@ and more scalable.
   font-size: 1.4em;
   padding-right: 8em;
   list-style-type: disc;
+}
+.entry-content blockquote {
+  margin-left: 0px;
+  border-left: 3px solid #ccc;
+  padding-left: 1em;
+  color: #999;
 }
 .entry-content dd {
   margin-left: 0;
@@ -1733,6 +1745,22 @@ come into play. Have fun!
   /*********************
 GENERAL STYLES
 *********************/
+  h1,
+  .h1 {
+    font-size: 2.3em;
+    font-weight: 300;
+  }
+  h2,
+  .h2 {
+    font-size: 1.8em;
+  }
+  h3,
+  .h3 {
+    color: #222;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
   /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -1879,15 +1907,12 @@ NAVIGATION STYLES
     float: left;
     margin-right: 2%;
   }
-  .hentry header h1 {
-    font-size: 2.3em;
-  }
   .hentry header .byline {
     font-size: 1em;
   }
   .hentry p {
-    font-size: 1.4em;
-    padding-right: 8em;
+    font-size: 1.3em;
+    padding-right: 10em;
   }
   /* end .hentry */
   #map {
