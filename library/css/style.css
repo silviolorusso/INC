@@ -910,6 +910,12 @@ and more scalable.
 .nav li.current_page_ancestor {
   border: 1px solid #ff3300;
 }
+.nav li.current-menu-item a:hover,
+.nav li.current_page_item a:hover,
+.nav li.current_page_ancestor a:hover {
+  background-color: #ffffff;
+  color: #ff3300;
+}
 /* end .nav */
 #nav-below,
 #infscr-loading {

@@ -276,7 +276,10 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 		border: 1px solid @link-color;
-		a {}
+		a:hover {
+			background-color: @white;
+			color: @link-color;
+		}
 	}  /* end current highlighters */
 } /* end .nav */
 #nav-below, #infscr-loading {

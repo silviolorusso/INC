@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
 		$("#s").attr("placeholder","Search");
 		
 		// social button 2x
-		$("#social i").addClass('fa-2x');
+		$("#social i, #share i").addClass('fa-2x');
 	}
 	
 	// Fitvid to fit video size on window resize
