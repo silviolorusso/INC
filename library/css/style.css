@@ -639,7 +639,7 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 */
 /******************************************************************
 Site Name:
-Author:
+Author: Silvio Lorusso & Roberto Picerno
 
 Stylesheet: Base Mobile Stylesheet
 
@@ -680,45 +680,6 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-/********************
-02. WORDPRESS BODY CLASSES
-    style a page via class
-********************/
-/* for sites that are read right to left (i.e. hebrew) */
-/* home page */
-/* blog template page */
-/* archive page */
-/* date archive page */
-/* replace the number to the corresponding page number */
-/* search page */
-/* search result page */
-/* no results search page */
-/* individual paged search (i.e. body.search-paged-3) */
-/* 404 page */
-/* single post page */
-/* individual post page by id (i.e. body.postid-73) */
-/* individual paged single (i.e. body.single-paged-3) */
-/* attatchment page */
-/* individual attatchment page (i.e. body.attachmentid-763) */
-/* style mime type pages */
-/* author page */
-/* user nicename (i.e. body.author-samueladams) */
-/* paged author archives (i.e. body.author-paged-4) for page 4 */
-/* category page */
-/* individual category page (i.e. body.category-6) */
-/* replace the number to the corresponding page number */
-/* tag page */
-/* individual tag page (i.e. body.tag-news) */
-/* replace the number to the corresponding page number */
-/* custom page template page */
-/* individual page template (i.e. body.page-template-contact-php */
-/* replace the number to the corresponding page number */
-/* parent page template */
-/* child page template */
-/* replace the number to the corresponding page number */
-/* if user is logged in */
-/* paged items like search results or archives */
-/* individual paged (i.e. body.paged-3) */
 /*********************
 03. LAYOUT & GRID STYLES
 *********************/
@@ -754,6 +715,10 @@ a:visited:link {
 		for mobile devices.
 		*/
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+a:hover,
+a:visited:hover {
+  transition: background-color 250ms, color 250ms, border 250ms;
 }
 /******************************************************************
 05. H1, H2, H3, H4, H5 STYLES
@@ -946,7 +911,7 @@ and more scalable.
   width: 100%;
 }
 .box:hover {
-  box-shadow: 1px 1px 0px 0px #ff3300;
+  box-shadow: 1px 1px 1px 1px #ff3300;
 }
 .box .single {
   min-height: 200px;
@@ -1129,15 +1094,6 @@ and more scalable.
   margin-left: 20px;
 }
 /* end .hentry */
-/* want to style individual post classes? Booya! */
-/* post by id (i.e. post-3) */
-/* general post style */
-/* general article on a page style */
-/* general style on an attatchment */
-/* sticky post style */
-/* hentry class */
-/* style by category (i.e. category-videos) */
-/* style by tag (i.e. tag-news) */
 /* entry content */
 .entry-content {
   /*
@@ -1146,6 +1102,11 @@ and more scalable.
 			and floating images at the next breakpoint,
 			but it's up to you. Feel free to change it up.
 			*/
+}
+.entry-content h1,
+.entry-content h2,
+.entry-content h3 {
+  padding-right: 8em;
 }
 .entry-content ul,
 .entry-content ol,
@@ -1507,12 +1468,6 @@ div.publication div.download {
   margin: 0 20px 1.1em;
 }
 /*********************
-12. SIDEBARS & ASIDES
-*********************/
-.widget ul li {
-  /* deep nesting */
-}
-/*********************
 13. FOOTER STYLES
 *********************/
 .footer {
@@ -1520,40 +1475,50 @@ div.publication div.download {
   background-color: #444444;
   color: #ffffff;
   height: 120px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
-.footer #inner-footer #creating-tomorrow {
-  font-size: 0.6em;
-  float: left;
-  margin-top: -15px;
+.footer #inner-footer {
+  /*
+		#creating-tomorrow {
+			font-size: 0.6em;
+			float: left;
+			margin-top: -15px;
+		}
+		#createit {
+			background-image: url('../images/createit.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			width: 66px;
+			height: 38px;
+			float: left;
+			margin-left: 20px;
+			margin-top: -9px;
+		}
+*/
 }
-.footer #inner-footer #createit {
-  background-image: url('../images/createit.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  width: 66px;
-  height: 38px;
+.footer #inner-footer #hva {
   float: left;
-  margin-left: 20px;
-  margin-top: -9px;
+}
+.footer #inner-footer #hva img {
+  width: 250px;
 }
 .footer #inner-footer #social {
+  margin-top: 5px;
   float: right;
 }
 .footer #inner-footer #social i {
   margin-left: 5px;
   color: #ffffff;
 }
-/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-/* end .footer-links */
+.footer #inner-footer #credits {
+  font-size: 0.7em;
+  margin-left: 10px;
+  clear: both;
+  padding-top: 15px;
+}
+.footer #inner-footer #credits a {
+  font-weight: 800;
+}
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -1765,7 +1730,7 @@ GENERAL STYLES
     color: #222;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9em;
+    font-size: 1.3em;
   }
   /*********************
 LAYOUT & GRID STYLES
