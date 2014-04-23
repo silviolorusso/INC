@@ -2,7 +2,6 @@
 		<footer class="footer" role="contentinfo">
 			<div id="inner-footer" class="wrap">
 				<div id="hva">
-					<img src="<?php echo get_template_directory_uri(); ?>/library/images/hva-logo.png" />
 				</div>
 				<div id="social">
 					<a href="https://www.facebook.com/networkcultures"><i class="fa fa-facebook"></i></a>

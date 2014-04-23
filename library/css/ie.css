@@ -656,16 +656,28 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.footer #inner-footer #creating-tomorrow {
-  font-size: 0.8em;
+.footer #inner-footer {
+  /*
+		#creating-tomorrow {
+			font-size: 0.8em;
+		}
+		#createit {
+			width: 84px;
+			height: 48px;
+			margin-left: 50px;
+		}
+*/
 }
-.footer #inner-footer #createit {
-  width: 84px;
-  height: 48px;
-  margin-left: 50px;
+.footer #inner-footer #hva {
+  width: 250px;
+  height: 50px;
+  background-size: 100%;
 }
 .footer #inner-footer #social i {
   margin-left: 15px;
+}
+.footer #inner-footer #credits {
+  padding-top: 15px;
 }
 /******************************************************************
 Site Name: 

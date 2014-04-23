@@ -911,7 +911,7 @@ and more scalable.
   width: 100%;
 }
 .box:hover {
-  box-shadow: 1px 1px 1px 1px #ff3300;
+  box-shadow: 0px 0px 0px 1px #ff3300;
 }
 .box .single {
   min-height: 200px;
@@ -1497,10 +1497,12 @@ div.publication div.download {
 */
 }
 .footer #inner-footer #hva {
+  background-image: url('../images/hva-logo.png');
+  width: 25px;
+  height: 50px;
+  background-size: auto 50%;
+  background-repeat: no-repeat;
   float: left;
-}
-.footer #inner-footer #hva img {
-  width: 250px;
 }
 .footer #inner-footer #social {
   margin-top: 5px;
@@ -1514,7 +1516,6 @@ div.publication div.download {
   font-size: 0.7em;
   margin-left: 10px;
   clear: both;
-  padding-top: 15px;
 }
 .footer #inner-footer #credits a {
   font-weight: 800;
@@ -1929,16 +1930,28 @@ SIDEBARS & ASIDES
   /*********************
 FOOTER STYLES
 *********************/
-  .footer #inner-footer #creating-tomorrow {
-    font-size: 0.8em;
+  .footer #inner-footer {
+    /*
+		#creating-tomorrow {
+			font-size: 0.8em;
+		}
+		#createit {
+			width: 84px;
+			height: 48px;
+			margin-left: 50px;
+		}
+*/
   }
-  .footer #inner-footer #createit {
-    width: 84px;
-    height: 48px;
-    margin-left: 50px;
+  .footer #inner-footer #hva {
+    width: 250px;
+    height: 50px;
+    background-size: 100%;
   }
   .footer #inner-footer #social i {
     margin-left: 15px;
+  }
+  .footer #inner-footer #credits {
+    padding-top: 15px;
   }
 }
 /*
