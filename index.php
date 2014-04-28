@@ -103,7 +103,7 @@
 						?>
 					</div>
 				</div>				
-				<a href="#">
+				<a href="<?php echo home_url().'/publications'; ?>">
 					<div id="inc-pubs">
 						<div id="inc-pubs-button">
 							See all INC publications

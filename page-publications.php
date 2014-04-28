@@ -16,22 +16,22 @@ Template Name: Publications
 			            <li id="studies" class="pub-menu-items">
 			                Studies in Network Cultures
 			            </li>
-			            <li id="inc-readers" class="pub-menu-items">
+			            <li id="inc-reader" class="pub-menu-items">
 			                INC Readers
 			            </li>
-			            <li id="network-notebooks" class="pub-menu-items">
+			            <li id="net-notebook" class="pub-menu-items">
 			                Network Notebooks
 			            </li>
 			            <li id="tod" class="pub-menu-items">
 			                Theory on Demand
 			            </li>
-			             <li id="conference-reports" class="pub-menu-items">
+			             <li id="conference-report" class="pub-menu-items">
 			                Conference Reports
 			            </li>
 			            <li id="misc" class="pub-menu-items">
 			                Miscellanea
 			            </li>
-			            <li id="geert-books" class="pub-menu-items">
+			            <li id="geert-book" class="pub-menu-items">
 			                Geert Lovink's books
 			            </li>
 					  </ul>
@@ -43,22 +43,22 @@ Template Name: Publications
 			            <p id="studies-desc">
 			                <b>About the Studies in Network Cultures:</b> This book series investigates concepts and practices specific to network cultures and also explores how to conduct research within this shifting environment. Published by NAi Publishers.
 			            </p>
-			            <p id="inc-readers-desc">
+			            <p id="inc-reader-desc">
 			                <b>About the INC Readers:</b> The INC Reader series are devoted to INC conference themes and derived from conference contributions.
 			            </p>
-			            <p id="network-notebooks-desc">
+			            <p id="net-notebook-desc">
 			                <b>About the Network Notebooks:</b> Network Notebooks presents new media research specifically commissioned by the INC.
 			            </p>
 			            <p id="tod-desc">
 			                <b>About the Theory on Demand:</b> This series takes its name from Print on Demand, a process in which new copies of a book are not printed until an order has been received.
 			            </p>
-			            <p id="conference-reports-desc">
+			            <p id="conference-report-desc">
 			                <b>Conference Reports:</b>
 			            </p>
 			            <p id="misc-desc">
 			                <b>Miscellanea:</b>
 			            </p>
-			            <p id="geert-books-desc">
+			            <p id="geert-book-desc">
 			                <b>About Geert Lovink's books:</b>
 			            </p>
 					</div>
@@ -168,12 +168,12 @@ Template Name: Publications
         }
         selectPub('all');
         selectPub('studies');
-        selectPub('inc-readers');
-        selectPub('network-notebooks');
+        selectPub('inc-reader');
+        selectPub('net-notebook');
         selectPub('tod');
-        selectPub('conference-reports');
+        selectPub('conference-report');
         selectPub('misc');
-        selectPub('geert-books');
+        selectPub('geert-book');
 </script>
 			
 <?php get_footer(); ?>
