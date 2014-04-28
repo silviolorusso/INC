@@ -16,7 +16,7 @@ Template Name: Publications
 			            <li id="studies" class="pub-menu-items">
 			                Studies in Network Cultures
 			            </li>
-			            <li id="inc-read" class="pub-menu-items">
+			            <li id="inc-readers" class="pub-menu-items">
 			                INC Readers
 			            </li>
 			            <li id="network-notebooks" class="pub-menu-items">
@@ -43,7 +43,7 @@ Template Name: Publications
 			            <p id="studies-desc">
 			                <b>About the Studies in Network Cultures:</b> This book series investigates concepts and practices specific to network cultures and also explores how to conduct research within this shifting environment. Published by NAi Publishers.
 			            </p>
-			            <p id="inc-read-desc">
+			            <p id="inc-readers-desc">
 			                <b>About the INC Readers:</b> The INC Reader series are devoted to INC conference themes and derived from conference contributions.
 			            </p>
 			            <p id="network-notebooks-desc">
@@ -64,11 +64,20 @@ Template Name: Publications
 					</div>
 			        <?php
 			        $query = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'publication' ) );
+			        $i = 1;
 			        while ( $query->have_posts() ) : $query->the_post();
 			            $id = $query->post->ID;  
 			        ?>
 			        <?php $categories = get_the_category(); ?>
-			        <div  id="publication-<?php the_ID() ?>" class="publication fourcol first 
+			        <div  id="publication-<?php the_ID() ?>" class="publication fourcol all
+			                <?php
+			                	if (($i - 1) % 3 == 0) {
+				                	echo "first";
+			                	} elseif (($i % 3) == 0) {
+				                	echo "last";
+			                	} 
+			                	$i++;   
+			                ?>
 			                <?php
 			                    foreach ($categories as $category) {
 			                            echo $category->slug ;
@@ -134,69 +143,37 @@ Template Name: Publications
             jQuery('body').css('overflow-y', 'scroll');
         });
 
-        jQuery("#all").click(function() {
-            jQuery('.pub-menu-items').removeClass("current");
-            jQuery(this).addClass("current");
-            jQuery('div.publication').show('fast');
-            jQuery('div#pub-desc p').hide();
-            jQuery('p#all-desc').show();
-        });
-        jQuery("#studies").click(function() {
-            jQuery('.pub-menu-items').removeClass("current");
-            jQuery(this).addClass("current");
-            jQuery('div.publication.studies').show('fast');
-            jQuery('div.publication:not(.studies)').hide('fast');
-            jQuery('div#pub-desc p').hide();
-            jQuery('p#studies-desc').show();
-        });
-        jQuery("#inc-read").click(function() {
-            jQuery('.pub-menu-items').removeClass("current");
-            jQuery(this).addClass("current");
-            jQuery('div.publication.inc-readers').show('fast');
-            jQuery('div.publication:not(.inc-readers)').hide('fast');
-            jQuery('div#pub-desc p').hide();
-            jQuery('p#inc-read-desc').show();
-        });
-        jQuery("#network-notebooks").click(function() {
-            jQuery('.pub-menu-items').removeClass("current");
-            jQuery(this).addClass("current");
-            jQuery('div.publication.network-notebooks').show('fast');
-            jQuery('div.publication:not(.network-notebooks)').hide('fast');
-            jQuery('div#pub-desc p').hide();
-            jQuery('p#network-notebooks-desc').show();
-        });
-        jQuery("#tod").click(function() {
-            jQuery('.pub-menu-items').removeClass("current");
-            jQuery(this).addClass("current");
-            jQuery('div.publication.tod').show('fast');
-            jQuery('div.publication:not(.tod)').hide('fast');
-            jQuery('div#pub-desc p').hide();
-            jQuery('p#tod-desc').show();
-        });
-        jQuery("#conference-reports").click(function() {
-            jQuery('.pub-menu-items').removeClass("current");
-            jQuery(this).addClass("current");
-            jQuery('div.publication.conference-reports').show('fast');
-            jQuery('div.publication:not(.conference-reports)').hide('fast');
-            jQuery('div#pub-desc p').hide();
-            jQuery('p#conference-reports-desc').show();
-        });
-        jQuery("#misc").click(function() {
-            jQuery('.pub-menu-items').removeClass("current");
-            jQuery(this).addClass("current");
-            jQuery('div.publication.misc').show('fast');
-            jQuery('div.publication:not(.misc)').hide('fast');
-            jQuery('div#pub-desc p').hide();
-            jQuery('p#misc-desc').show();
-        });
-        jQuery("#geert-books").click(function() {
-            jQuery('.pub-menu-items').removeClass("current");
-            jQuery(this).addClass("current");
-            jQuery('div.publication.geert-books').show('fast');
-            jQuery('div.publication:not(.geert-books)').hide('fast');
-            jQuery('div#pub-desc p').hide();
-            jQuery('p#geert-books-desc').show();
-        });
+        function selectPub(className) { 
+		    var pubId = '#' + className;
+		    var pubClass = '.' + className;
+	        jQuery(pubId).click(function() {
+	            jQuery('.pub-menu-items').removeClass("current");
+	            jQuery(this).addClass("current");
+	            jQuery('div.publication' + pubClass).show('fast');
+	            jQuery('div.publication:not(' +  pubClass + ')').hide('fast');
+	            jQuery('div#pub-desc p').hide();
+	            jQuery('p' + pubId + '-desc').show();
+	            
+	            jQuery('div.publication').removeClass("first last");
+	            i = 1;
+	            jQuery(pubClass).each(function() {
+					if ((i - 1) % 3 == 0) {
+						jQuery(this).addClass("first yo");
+					} else if ((i % 3) == 0) {
+						jQuery(this).addClass("last");
+					} 
+					i = i+1;
+				}); 
+	        });
+        }
+        selectPub('all');
+        selectPub('studies');
+        selectPub('inc-readers');
+        selectPub('network-notebooks');
+        selectPub('tod');
+        selectPub('conference-reports');
+        selectPub('misc');
+        selectPub('geert-books');
 </script>
 			
 <?php get_footer(); ?>
