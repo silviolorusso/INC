@@ -99,7 +99,13 @@ Template Name: Publications
 							<p class="pub-title">
 							     <a href="<?php echo get_permalink($id) ?>"><?php echo get_the_title($id) ?></a>
 							</p>
-				                <?php echo get_the_excerpt(); ?> | 
+				                <?php 
+				                $info = types_render_field("pub-info", array('output'=>'raw'));
+				                if ($info != '') {
+							         echo $info;
+							    } else {
+								    echo get_the_excerpt(); 
+							    } ?> |
 				                <?php 
 							     $download = types_render_field("pub-download", array('output'=>'raw'));
 							     if($download != '') {

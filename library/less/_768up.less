@@ -75,10 +75,39 @@ NAVIGATION STYLES
 #main-nav {
 	padding-top: 70px;
 }
-.nav {
+#burger {
+	display: none;
+}
+#baguette {
+	display: block;
+}
+nav#baguette {
+	border-bottom: 0;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	background-color: white;
+	padding-bottom: 2px;
+	& > ul > li:first-child {
+		display: none;
+	}
+	ul {
+		margin: 2px 0;
+	}
 	li {
+		float: left;
+		display: inline;
+		padding: 10px;
+		border: 1px solid transparent;
+		background-color: @white;
 		a {
+			font-weight: 600;
+			text-decoration: none;
+			padding: 10px 10px;
 			border-bottom: 0;
+			&:hover {
+				background-color: @link-color;
+				color: @white;
+			}
 		}
 		&:first-child {}
 		&:last-child {}
@@ -87,8 +116,7 @@ NAVIGATION STYLES
 		*/
 		ul.sub-menu,
 		ul.children {
-			margin-top: 0;
-			border: 1px solid #ccc;
+			margin-top: 10px;
 			border-top: 0;
 			position: absolute;
 			overflow: hidden;
@@ -98,11 +126,10 @@ NAVIGATION STYLES
 			li {
 
 				a {
-					padding-left: 10px;
+					padding-left: 30px;
 					border-right: 0;
 					display: block;
 					width: 180px;
-					border-bottom: 1px solid #ccc;
 
 					&:hover,
 					&:focus {}
@@ -148,9 +175,12 @@ NAVIGATION STYLES
 	li.current-menu-item,
 	li.current_page_item,
 	li.current_page_ancestor {
-		a {}
+		border: 1px solid @link-color;
+		a:hover {
+			background-color: @white;
+			color: @link-color;
+		}
 	}  /* end current highlighters */
-
 } /* end .nav */
 
 /*********************

@@ -184,21 +184,31 @@ and more scalable.
 	background-color: @white;
 	padding-top: 57px;
 }
-.nav {
+nav#burger {
 	border-bottom: 0;
 	text-transform: uppercase;
 	font-size: 0.8em;
 	background-color: white;
 	padding-bottom: 2px;
+	div#navicon {
+		width: 100%;
+		background-color: @link-color;
+	}
+	& > div.top-nav {
+		display: none;
+	}
+	& > ul > li:first-child {
+		display: none;
+	}
 	ul {
 		margin: 2px 0;
 	}
 	li {
-		float: left;
-		display: inline;
 		padding: 10px;
 		border: 1px solid transparent;
+		background-color: @white;
 		a {
+			display: block;
 			font-weight: 600;
 			text-decoration: none;
 			padding: 10px 10px;
@@ -207,11 +217,6 @@ and more scalable.
 				color: @white;
 			}
 		}
-		&:first-child {
-			display: none;
-		}
-		&:last-child {}
-
 		/*
 		so you really have to rethink your dropdowns for mobile.
 		you don't want to have it expand too much because the
@@ -244,6 +249,9 @@ and more scalable.
 		}
 	}  /* end current highlighters */
 } /* end .nav */
+#baguette {
+	display: none;
+}
 #nav-below, #infscr-loading {
 	width: 100%;
 	text-align: center;
@@ -255,7 +263,7 @@ and more scalable.
 08. POSTS & CONTENT STYLES
 *********************/
 .projectbox {
-	height: 250px !important;
+	height: 275px !important;
 	padding: 20px;
 	.project-pic {
 		width: 100%;
@@ -320,6 +328,10 @@ and more scalable.
 		}
 		.content a {
 			color: @black;
+		}
+		& > p {
+			max-height: 9em; 
+			overflow: hidden;
 		}
 	}
 	.latest {

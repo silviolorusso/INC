@@ -23,7 +23,12 @@ Template Name: Blog
 									<a href="<?php echo the_permalink(); ?>">
 										<?php
 											$first_image = catch_that_image();
-											if ($first_image != '') { ?>
+											if ( has_post_thumbnail() ) { 
+												$url_thumb = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+											?>
+											<div class="box-left single" style="background-image:url('<?php echo $url_thumb; ?>')">
+											</div>
+										<?php } elseif ($first_image != '') { ?>	
 											<div class="box-left single" style="background-image:url('<?php echo $first_image;?>')">
 											</div>
 										<?php } else { ?>

@@ -9,7 +9,7 @@
 		<meta charset="utf-8">
 		<?php // Google Chrome Frame for IE ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><?php wp_title(''); ?></title>
+		<title><?php echo get_bloginfo(); ?> | <?php wp_title(''); ?></title>
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
@@ -57,7 +57,21 @@
 				</div>
 			</header>
 			<div id="main-nav">
-				<nav role="navigation" class="wrap">
+				<nav role="navigation" class="wrap" id="burger">
+					<div id="navicon">
+						<button class="MobileNavButton">
+							<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+							 <g>
+								<rect height="4" width="20" y="0" x="0" fill="#000000"></rect>
+								<rect height="4" width="20" y="8" x="0" fill="#000000"></rect>
+								<rect height="4" width="20" y="16" x="0" fill="#000000"></rect>
+							 </g>
+							</svg>
+						</button>
+					</div>
+					<?php bones_main_nav(); ?>
+				</nav>
+				<nav role="navigation" class="wrap" id="baguette">
 					<?php bones_main_nav(); ?>
 				</nav>
 			</div>

@@ -488,24 +488,52 @@ NAVIGATION STYLES
 #main-nav {
   padding-top: 70px;
 }
-.nav {
+#burger {
+  display: none;
+}
+#baguette {
+  display: block;
+}
+nav#baguette {
+  border-bottom: 0;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  background-color: white;
+  padding-bottom: 2px;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
 }
-.nav li {
+nav#baguette > ul > li:first-child {
+  display: none;
+}
+nav#baguette ul {
+  margin: 2px 0;
+}
+nav#baguette li {
+  float: left;
+  display: inline;
+  padding: 10px;
+  border: 1px solid transparent;
+  background-color: #ffffff;
   /*
 		plan your menus and drop-downs wisely.
 		*/
   /* showing sub-menus */
 }
-.nav li a {
+nav#baguette li a {
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 10px;
   border-bottom: 0;
 }
-.nav li ul.sub-menu,
-.nav li ul.children {
-  margin-top: 0;
-  border: 1px solid #ccc;
+nav#baguette li a:hover {
+  background-color: #ff3300;
+  color: #ffffff;
+}
+nav#baguette li ul.sub-menu,
+nav#baguette li ul.children {
+  margin-top: 10px;
   border-top: 0;
   position: absolute;
   overflow: hidden;
@@ -513,30 +541,40 @@ NAVIGATION STYLES
   z-index: 8999;
   /* highlight sub-menu current page */
 }
-.nav li ul.sub-menu li,
-.nav li ul.children li {
+nav#baguette li ul.sub-menu li,
+nav#baguette li ul.children li {
   /*
 				if you need to go deeper, go nuts
 				just remember deeper menus suck
 				for usability. k, bai.
 				*/
 }
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
-  padding-left: 10px;
+nav#baguette li ul.sub-menu li a,
+nav#baguette li ul.children li a {
+  padding-left: 30px;
   border-right: 0;
   display: block;
   width: 180px;
-  border-bottom: 1px solid #ccc;
 }
-.nav li ul.sub-menu li:last-child a,
-.nav li ul.children li:last-child a {
+nav#baguette li ul.sub-menu li:last-child a,
+nav#baguette li ul.children li:last-child a {
   border-bottom: 0;
 }
-.nav li:hover ul {
+nav#baguette li:hover ul {
   top: auto;
   overflow: visible;
   visibility: visible;
+}
+nav#baguette li.current-menu-item,
+nav#baguette li.current_page_item,
+nav#baguette li.current_page_ancestor {
+  border: 1px solid #ff3300;
+}
+nav#baguette li.current-menu-item a:hover,
+nav#baguette li.current_page_item a:hover,
+nav#baguette li.current_page_ancestor a:hover {
+  background-color: #ffffff;
+  color: #ff3300;
 }
 /* end .nav */
 /*********************

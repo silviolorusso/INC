@@ -68,6 +68,11 @@ jQuery(document).ready(function($) {
 				$('#logo').fadeIn();
 			});
 		});
+		
+		/* Burger menu */
+		$( "#navicon" ).click(function() {
+			$( "nav#burger > div.top-nav" ).toggle();
+		});
 	
 	} /* end smallest screen */
 		
