@@ -185,14 +185,32 @@ and more scalable.
 	padding-top: 57px;
 }
 nav#burger {
-	border-bottom: 0;
+	position: relative;
+	width: 100%;
+	z-index: 100;
 	text-transform: uppercase;
 	font-size: 0.8em;
 	background-color: white;
-	padding-bottom: 2px;
+	cursor: pointer;
 	div#navicon {
 		width: 100%;
-		background-color: @link-color;
+		padding: 15px;
+		font-weight: 600;
+		color: @link-color;
+		margin-top: -2px;
+		margin-bottom: -2px;
+		span::before { 
+		  content: "▼";
+		  margin-right: 15px;
+		}
+		&.open {
+			background-color: @link-color;
+			color: @white;
+			span::before { 
+			  content: "▲";
+			  margin-right: 15px;
+			}
+		}
 	}
 	& > div.top-nav {
 		display: none;
@@ -206,6 +224,7 @@ nav#burger {
 	li {
 		padding: 10px;
 		border: 1px solid transparent;
+		border-bottom: 1px solid @grey;
 		background-color: @white;
 		a {
 			display: block;
@@ -227,6 +246,7 @@ nav#burger {
 		ul.sub-menu,
 		ul.children {
 			li {
+				border-bottom-color: transparent;
 				a {
 					padding-left: 30px;
 					&:hover,
@@ -464,6 +484,21 @@ nav#burger {
 			color: @black;
 			header {
 				margin-top: 20px;
+				#breadcrumb {
+					font-size: 0.8em;
+					text-transform: uppercase;
+					color: darken(@grey, 60%);
+					margin: 0;
+					a {
+						color: darken(@grey, 60%);
+						&:hover {
+							color: @black;
+						}
+					}
+				}
+				h1 {
+					margin-top: 0.3em;
+				}
 			}
 			footer {
 				#share {

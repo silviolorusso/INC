@@ -59,15 +59,7 @@
 			<div id="main-nav">
 				<nav role="navigation" class="wrap" id="burger">
 					<div id="navicon">
-						<button class="MobileNavButton">
-							<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-							 <g>
-								<rect height="4" width="20" y="0" x="0" fill="#000000"></rect>
-								<rect height="4" width="20" y="8" x="0" fill="#000000"></rect>
-								<rect height="4" width="20" y="16" x="0" fill="#000000"></rect>
-							 </g>
-							</svg>
-						</button>
+						<span>MENU</span>
 					</div>
 					<?php bones_main_nav(); ?>
 				</nav>

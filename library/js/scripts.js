@@ -72,6 +72,7 @@ jQuery(document).ready(function($) {
 		/* Burger menu */
 		$( "#navicon" ).click(function() {
 			$( "nav#burger > div.top-nav" ).toggle();
+			$( this ).toggleClass( "open" );
 		});
 	
 	} /* end smallest screen */

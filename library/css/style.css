@@ -829,18 +829,36 @@ and more scalable.
   padding-top: 57px;
 }
 nav#burger {
-  border-bottom: 0;
+  position: relative;
+  width: 100%;
+  z-index: 100;
   text-transform: uppercase;
   font-size: 0.8em;
   background-color: white;
-  padding-bottom: 2px;
+  cursor: pointer;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
 }
 nav#burger div#navicon {
   width: 100%;
+  padding: 15px;
+  font-weight: 600;
+  color: #ff3300;
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+nav#burger div#navicon span::before {
+  content: "▼";
+  margin-right: 15px;
+}
+nav#burger div#navicon.open {
   background-color: #ff3300;
+  color: #ffffff;
+}
+nav#burger div#navicon.open span::before {
+  content: "▲";
+  margin-right: 15px;
 }
 nav#burger > div.top-nav {
   display: none;
@@ -854,6 +872,7 @@ nav#burger ul {
 nav#burger li {
   padding: 10px;
   border: 1px solid transparent;
+  border-bottom: 1px solid #f4f4f4;
   background-color: #ffffff;
   /*
 		so you really have to rethink your dropdowns for mobile.
@@ -872,6 +891,10 @@ nav#burger li a {
 nav#burger li a:hover {
   background-color: #ff3300;
   color: #ffffff;
+}
+nav#burger li ul.sub-menu li,
+nav#burger li ul.children li {
+  border-bottom-color: transparent;
 }
 nav#burger li ul.sub-menu li a,
 nav#burger li ul.children li a {
@@ -1095,6 +1118,21 @@ nav#burger li.current_page_ancestor a:hover {
 }
 .hentry header {
   margin-top: 20px;
+}
+.hentry header #breadcrumb {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: #5b5b5b;
+  margin: 0;
+}
+.hentry header #breadcrumb a {
+  color: #5b5b5b;
+}
+.hentry header #breadcrumb a:hover {
+  color: #222222;
+}
+.hentry header h1 {
+  margin-top: 0.3em;
 }
 .hentry footer #share {
   color: #5b5b5b;

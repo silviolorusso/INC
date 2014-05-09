@@ -5,6 +5,7 @@
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 								<header class="article-header">
+									<p id="breadcrumb">Publications:</p>
 									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 								</header>
 								<section class="entry-content clearfix" itemprop="articleBody">
