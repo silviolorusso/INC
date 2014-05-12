@@ -8,13 +8,14 @@
 									<p id="breadcrumb">Blog:</p>
 									<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 									<p class="byline vcard"><?php
-										printf( __( 'By <span class="author">%3$s</span>, <time class="updated" datetime="%1$s" pubdate>%2$s</time>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', ') );
+										printf( __( 'By <span class="author">%4$s</span>, <time class="updated" datetime="%1$s" pubdate>%2$s at %3$s</time>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')), get_the_time('g:i a'),  bones_get_the_author_posts_link(), get_the_category_list(', ') );
 									?></p>
 								</header>
 								<section class="entry-content clearfix" itemprop="articleBody">
 									<?php the_content(); ?>
 								</section>
 								<footer class="article-footer">
+									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 									<div id="share">
 										<span>Share</span>
 										<script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
@@ -22,7 +23,6 @@
 										<a href="https://twitter.com/share?url=<?php echo urlencode(the_permalink()); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
 										<a href="mailto:?subject=<?php the_title(); ?>&amp;body=<?php the_permalink() ?>." title="Share by Email"><i class="fa fa-envelope"></i></a>
 									</div>
-									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 								</footer>
 							</article>
 						<?php endwhile; ?>
@@ -41,7 +41,7 @@
 						<?php endif; ?>
 					</div>
 					<div id="next" class="clearfix">
-						<p id="next-read">Next Readings</p>
+						<p id="next-read">Most Recent Readings</p>
 						<?php
 						$currentId = get_the_ID();
 						$args = array(

@@ -38,28 +38,28 @@ Template Name: Publications
 					</div>
 					<div id="pub-desc" class="clearfix">
 			            <p id="all-desc" style="display:block;">
-			                <b>About the INC Publications:</b> The aim of the INC is to create sustainable research networks. In its first years, the INC selected a few emerging topics in which a critical contribution could be made, such as ICT for development, urban screens and the creative industries. Such an INC research thread may start with just one person with ideas on a topic of critical importance. This can lead to the formation of a small group of international researchers, both inside and outside of the academy, which may then result in a larger online discussion. 
+			                <?php echo types_render_field("all", array('output'=>'raw')); ?>
 			            </p>
 			            <p id="studies-desc">
-			                <b>About the Studies in Network Cultures:</b> This book series investigates concepts and practices specific to network cultures and also explores how to conduct research within this shifting environment. Published by NAi Publishers.
+			                <?php echo types_render_field("studies", array('output'=>'raw')); ?>
 			            </p>
 			            <p id="inc-reader-desc">
-			                <b>About the INC Readers:</b> The INC Reader series are devoted to INC conference themes and derived from conference contributions.
+			                <?php echo types_render_field("readers", array('output'=>'raw')); ?>			            
 			            </p>
 			            <p id="net-notebook-desc">
-			                <b>About the Network Notebooks:</b> Network Notebooks presents new media research specifically commissioned by the INC.
+			                <?php echo types_render_field("notebooks", array('output'=>'raw')); ?>
 			            </p>
 			            <p id="tod-desc">
-			                <b>About the Theory on Demand:</b> This series takes its name from Print on Demand, a process in which new copies of a book are not printed until an order has been received.
+				            <?php echo types_render_field("tod", array('output'=>'raw')); ?>
 			            </p>
 			            <p id="conference-report-desc">
-			                <b>Conference Reports:</b>
+			                <?php echo types_render_field("conference", array('output'=>'raw')); ?>
 			            </p>
 			            <p id="misc-desc">
-			                <b>Miscellanea:</b>
+			                <?php echo types_render_field("misc", array('output'=>'raw')); ?>
 			            </p>
 			            <p id="geert-book-desc">
-			                <b>About Geert Lovink's books:</b>
+			                <?php echo types_render_field("geert", array('output'=>'raw')); ?>
 			            </p>
 					</div>
 			        <?php

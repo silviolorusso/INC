@@ -536,29 +536,44 @@ nav#baguette li ul.children {
   margin-top: 10px;
   border-top: 0;
   position: absolute;
-  overflow: hidden;
   visibility: hidden;
   z-index: 8999;
+  margin-left: -12px;
   /* highlight sub-menu current page */
 }
 nav#baguette li ul.sub-menu li,
 nav#baguette li ul.children li {
-  /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
+  float: none;
+  display: block;
 }
 nav#baguette li ul.sub-menu li a,
 nav#baguette li ul.children li a {
-  padding-left: 30px;
   border-right: 0;
   display: block;
   width: 180px;
 }
+nav#baguette li ul.sub-menu li a:hover,
+nav#baguette li ul.children li a:hover {
+  background-color: #ff3300;
+  color: #ffffff;
+}
 nav#baguette li ul.sub-menu li:last-child a,
 nav#baguette li ul.children li:last-child a {
   border-bottom: 0;
+}
+nav#baguette li ul.sub-menu li > ul,
+nav#baguette li ul.children li > ul {
+  visibility: hidden;
+}
+nav#baguette li ul.sub-menu li > ul li,
+nav#baguette li ul.children li > ul li {
+  position: relative;
+  left: 203px;
+  top: -60px;
+}
+nav#baguette li ul.sub-menu li:hover > ul,
+nav#baguette li ul.children li:hover > ul {
+  visibility: visible;
 }
 nav#baguette li:hover ul {
   top: auto;

@@ -119,46 +119,44 @@ nav#baguette {
 			margin-top: 10px;
 			border-top: 0;
 			position: absolute;
-			overflow: hidden;
 			visibility: hidden;
 			z-index: 8999;
-
+			margin-left: -12px;
 			li {
-
+				float: none;
+				display: block;
 				a {
-					padding-left: 30px;
 					border-right: 0;
 					display: block;
 					width: 180px;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
+					&:hover {
+						background-color: @link-color;
+						color: @white;
+					}
 				}
-
 				&:first-child {}
-
 				&:last-child {
-
 					a {
 						border-bottom: 0;
 					}
 				}
-
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-				ul {}
+				& > ul {
+					visibility: hidden;
+					li {
+						position: relative;
+						left: 203px;
+						top: -60px;
+					}
+				} 
+				&:hover > ul {
+					visibility: visible;
+				}
 			}
 
 			/* highlight sub-menu current page */
 			li.current-menu-item,
 			li.current_page_item,
 			li.current_page_ancestor {
-				a {}
 			}
 		}
 
