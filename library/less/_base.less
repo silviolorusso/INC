@@ -215,9 +215,6 @@ nav#burger {
 	& > div.top-nav {
 		display: none;
 	}
-	& > ul > li:first-child {
-		display: none;
-	}
 	ul {
 		margin: 2px 0;
 	}
@@ -319,6 +316,7 @@ nav#burger {
 		background-repeat: no-repeat;
 		text-align: center;
 		color: @black;
+		word-wrap: break-word;
 		p {
 			margin-top: 0;
 			padding-left: 15px;
@@ -374,6 +372,7 @@ nav#burger {
 }
 
 #content {
+	padding-bottom: 2em;
 	#pre-inner-content {
 		#inc-blurb {
 			font-weight: 300;
@@ -517,12 +516,8 @@ nav#burger {
 
 		/* entry content */
 		.entry-content {
-			h1, h2, h3 {
-				padding-right: 8em;
-			}
 			ul, ol, table, dl {
 				font-size: 1.4em;
-				padding-right: 8em;
 				list-style-type: disc;
 			}
 			blockquote {
@@ -692,7 +687,10 @@ div.publication {
 	}
 }
 
-
+/* audio player */
+p.audioplayer_container object {
+	height:2em;
+}
 
 /******************************************************************
 09. PAGE NAVI STYLES
@@ -1111,6 +1109,12 @@ div.publication {
 			margin-top: -9px;
 		}
 */
+		#cqcounter {
+			float: left;
+			margin-left: 21%;
+			margin-top: 6px;
+		}
+
 		#social {
 			margin-top: 5px;
 			float: right;

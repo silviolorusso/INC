@@ -863,9 +863,6 @@ nav#burger div#navicon.open span::before {
 nav#burger > div.top-nav {
   display: none;
 }
-nav#burger > ul > li:first-child {
-  display: none;
-}
 nav#burger ul {
   margin: 2px 0;
 }
@@ -963,6 +960,7 @@ nav#burger li.current_page_ancestor a:hover {
   background-repeat: no-repeat;
   text-align: center;
   color: #222222;
+  word-wrap: break-word;
 }
 .box .box-left p {
   margin-top: 0;
@@ -1011,6 +1009,9 @@ nav#burger li.current_page_ancestor a:hover {
   color: #5b5b5b;
   margin-top: -0.5em;
   margin-bottom: 1.5em;
+}
+#content {
+  padding-bottom: 2em;
 }
 #content #pre-inner-content #inc-blurb {
   font-weight: 300;
@@ -1155,17 +1156,11 @@ nav#burger li.current_page_ancestor a:hover {
 			but it's up to you. Feel free to change it up.
 			*/
 }
-.entry-content h1,
-.entry-content h2,
-.entry-content h3 {
-  padding-right: 8em;
-}
 .entry-content ul,
 .entry-content ol,
 .entry-content table,
 .entry-content dl {
   font-size: 1.4em;
-  padding-right: 8em;
   list-style-type: disc;
 }
 .entry-content blockquote {
@@ -1293,6 +1288,10 @@ div.publication div.info span {
 }
 div.publication div.download {
   text-align: right;
+}
+/* audio player */
+p.audioplayer_container object {
+  height: 2em;
 }
 /******************************************************************
 09. PAGE NAVI STYLES
@@ -1567,6 +1566,11 @@ div.publication div.download {
   background-size: auto 50%;
   background-repeat: no-repeat;
   float: left;
+}
+.footer #inner-footer #cqcounter {
+  float: left;
+  margin-left: 21%;
+  margin-top: 6px;
 }
 .footer #inner-footer #social {
   margin-top: 5px;
@@ -1902,12 +1906,9 @@ NAVIGATION STYLES
   nav#baguette li ul.sub-menu li > ul,
   nav#baguette li ul.children li > ul {
     visibility: hidden;
-  }
-  nav#baguette li ul.sub-menu li > ul li,
-  nav#baguette li ul.children li > ul li {
-    position: relative;
+    position: absolute;
     left: 203px;
-    top: -60px;
+    margin-top: -50px;
   }
   nav#baguette li ul.sub-menu li:hover > ul,
   nav#baguette li ul.children li:hover > ul {
@@ -2004,6 +2005,19 @@ NAVIGATION STYLES
     padding-right: 10em;
   }
   /* end .hentry */
+  /* entry content */
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3 {
+    padding-right: 8em;
+  }
+  .entry-content ul,
+  .entry-content ol,
+  .entry-content table,
+  .entry-content dl {
+    padding-right: 8em;
+  }
+  /* end .entry-content */
   #map {
     height: 200px;
   }

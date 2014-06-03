@@ -564,12 +564,9 @@ nav#baguette li ul.children li:last-child a {
 nav#baguette li ul.sub-menu li > ul,
 nav#baguette li ul.children li > ul {
   visibility: hidden;
-}
-nav#baguette li ul.sub-menu li > ul li,
-nav#baguette li ul.children li > ul li {
-  position: relative;
+  position: absolute;
   left: 203px;
-  top: -60px;
+  margin-top: -50px;
 }
 nav#baguette li ul.sub-menu li:hover > ul,
 nav#baguette li ul.children li:hover > ul {
@@ -666,6 +663,19 @@ nav#baguette li.current_page_ancestor a:hover {
   padding-right: 10em;
 }
 /* end .hentry */
+/* entry content */
+.entry-content h1,
+.entry-content h2,
+.entry-content h3 {
+  padding-right: 8em;
+}
+.entry-content ul,
+.entry-content ol,
+.entry-content table,
+.entry-content dl {
+  padding-right: 8em;
+}
+/* end .entry-content */
 #map {
   height: 200px;
 }
