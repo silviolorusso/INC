@@ -16,7 +16,7 @@
 					_n.javaEnabled()?_j="Y":_j="N";_b=screen; _r=_b.width; 
 					_n.appName!="Netscape"?_c=_b.colorDepth : _c=_b.pixelDepth;//--></script>
 
-					<a title="Free Web Counter" href="http://cqcounter.com/?_id=networkc&_lo=nl2" 
+					<a title="Free Web Counter" style="display:none" href="http://cqcounter.com/?_id=networkc&_lo=nl2" 
 					target="_top">
 					<script type="text/javascript" language="javascript"><!-- 
 					t(); //--></script>

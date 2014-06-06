@@ -13,9 +13,6 @@ Template Name: Publications
 			            <li id="all" class="pub-menu-items current">
 			                All
 			            </li>
-			            <li id="studies" class="pub-menu-items">
-			                Studies in Network Cultures
-			            </li>
 			            <li id="inc-reader" class="pub-menu-items">
 			                INC Readers
 			            </li>
@@ -25,14 +22,17 @@ Template Name: Publications
 			            <li id="tod" class="pub-menu-items">
 			                Theory on Demand
 			            </li>
+			            <li id="studies" class="pub-menu-items">
+			                Studies in Network Cultures
+			            </li>
+			   			<li id="geert-book" class="pub-menu-items">
+			                Geert Lovink's books
+			            </li>
 			             <li id="conference-report" class="pub-menu-items">
 			                Conference Reports
 			            </li>
 			            <li id="misc" class="pub-menu-items">
 			                Miscellanea
-			            </li>
-			            <li id="geert-book" class="pub-menu-items">
-			                Geert Lovink's books
 			            </li>
 					  </ul>
 					</div>

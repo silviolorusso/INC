@@ -33,7 +33,7 @@
 						</div>
 					</div>
 					
-					<a href="http://networkcultures.org/wpmu/geert/">
+					<a href="http://new.networkcultures.org/geert/">
 						<div id="geert-blog" class="box">
 							<p>net critique blog by Geert Lovink</p>
 						</div>

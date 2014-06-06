@@ -20,7 +20,7 @@
 										<span>Share</span>
 										<script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
         <a href="http://www.facebook.com/share.php?u=<full page url to share>" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"><i class="fa fa-facebook"></i></a>
-										<a href="https://twitter.com/share?url=<?php echo urlencode(the_permalink()); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+										<a href="https://twitter.com/share?text=<?php the_title(); ?>%20-" target="_blank"><i class="fa fa-twitter"></i></a>
 										<a href="mailto:?subject=<?php the_title(); ?>&amp;body=<?php the_permalink() ?>." title="Share by Email"><i class="fa fa-envelope"></i></a>
 									</div>
 								</footer>

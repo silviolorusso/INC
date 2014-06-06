@@ -545,6 +545,8 @@ nav#baguette li ul.sub-menu li,
 nav#baguette li ul.children li {
   float: none;
   display: block;
+  padding-bottom: 4px;
+  padding-top: 4px;
 }
 nav#baguette li ul.sub-menu li a,
 nav#baguette li ul.children li a {
@@ -674,6 +676,10 @@ nav#baguette li.current_page_ancestor a:hover {
 .entry-content table,
 .entry-content dl {
   padding-right: 8em;
+}
+.entry-content iframe {
+  max-width: none;
+  max-height: none;
 }
 /* end .entry-content */
 #map {

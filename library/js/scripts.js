@@ -68,12 +68,6 @@ jQuery(document).ready(function($) {
 				$('#logo').fadeIn();
 			});
 		});
-		
-		/* Burger menu */
-		$( "#navicon" ).click(function() {
-			$( "nav#burger > div.top-nav" ).toggle();
-			$( this ).toggleClass( "open" );
-		});
 	
 	} /* end smallest screen */
 		
@@ -91,6 +85,12 @@ jQuery(document).ready(function($) {
 		// social button 2x
 		$("#social i, #share i").addClass('fa-2x');
 	}
+
+	/* Burger menu */
+	$( "#navicon" ).click(function() {
+		$( "nav#burger > div.top-nav" ).toggle();
+		$( this ).toggleClass( "open" );
+	});
 	
 	// Fitvid to fit video size on window resize
 	function fitvid() {
