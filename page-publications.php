@@ -34,6 +34,11 @@ Template Name: Publications
 			            <li id="misc" class="pub-menu-items">
 			                Miscellanea
 			            </li>
+			            <a href="order-inc-publications/">
+				          	<li id="misc" class="pub-menu-items">
+				                Order INC Publications
+				            </li>
+				        </a>
 					  </ul>
 					</div>
 					<div id="pub-desc" class="clearfix">

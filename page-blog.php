@@ -6,9 +6,16 @@ Template Name: Blog
 
 <?php get_header(); ?>
 			<div id="content">
+				<div id="pre-inner-content" class="wrap clearfix">
+					<h1 class="title-out">Updates from the INC</h1>
+					<a href="http://networkcultures.org/geert/">
+						<div id="geert-blog">
+							<p>net critique blog by Geert Lovink</p>
+						</div>
+					</a>
+				</div>
 				<div id="inner-content" class="wrap clearfix">
 					<div id="next" class="clearfix">
-						<h1 class="title-out">Updates from the INC</h1>
 						<?php
 						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 						$args = array(
