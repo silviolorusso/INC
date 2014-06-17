@@ -622,17 +622,20 @@ nav#baguette li.current_page_ancestor a:hover {
 #content #pre-inner-content #inc-blurb {
   font-size: 2em;
 }
-#content #pre-inner-content #geert-blog {
-  text-align: left;
-  font-size: 2em;
-  margin-bottom: -0.3em;
-}
 #content #pre-inner-content #inc-news {
   font-size: 1em;
 }
 #content #pre-inner-content #inc-news #inc-news-pic {
   height: 115px;
   background-size: 200px;
+}
+#content #geert-blog {
+  text-align: left;
+  font-size: 2em;
+  margin-bottom: -0.3em;
+}
+#content #geert-blog p {
+  margin-top: 0;
 }
 #content #banner {
   text-align: center;

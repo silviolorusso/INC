@@ -5,7 +5,7 @@
 						<p><?php echo get_option('inc_blurb');?></p>
 					</div>
 
-					<div class="box clearfix" id="inc-news">
+					<!-- <div class="box clearfix" id="inc-news">
 						<div class="box-left index">
 							<a href="<?php echo home_url().'/blog'; ?>">
 								<div id="inc-news-pic">
@@ -31,13 +31,7 @@
 							}
 							wp_reset_postdata(); ?>
 						</div>
-					</div>
-					
-					<a href="http://networkcultures.org/geert/">
-						<div id="geert-blog" class="box">
-							<p>net critique blog by Geert Lovink</p>
-						</div>
-					</a>
+					</div> -->
 				</div>
 				<?php 
 				$banner = get_option('inc_banner');
@@ -54,6 +48,11 @@
 				</div>
 				<!-- projects here: new versions -->
 				<div id="inner-content" class="wrap clearfix">
+					<a href="http://networkcultures.org/geert/">
+						<div id="geert-blog" class="box">
+							<p>net critique blog by Geert Lovink</p>
+						</div>
+					</a>
 					<div id="main" class="twelvecol first last clearfix" role="main">
 						<?php
 						include_once('library/parse-feed.php');
@@ -67,39 +66,58 @@
 								$lastAuthor = $last->get_author();
 								$lastAuthorName = $lastAuthor->get_name();
 								$lastDate = $last->get_date('j/n/y');	
-								$lastDesc = $last->get_description();	
-								?>
+								$lastDesc = $last->get_description();
+
+								$lastDateIndex = $last->get_date('o m d h i s ');
+								$output = <<<EOT
 								<div class="box clearfix">
 									<div class="box-left index">
-										<a href="<?php echo $feedLink ?>">
-											<img class="index-pic" src="<?php echo $banner ?>" />
+										<a href="$feedLink">
+											<img class="index-pic" src="$banner" />
 										</a>
-										<p><?php echo $description ?></p>
+										<p>$description</p>
 									</div>
 									<div class="box-right latest">
 										<small>Latest Post</small>
-										<a href="<?php echo $lastLink ?>">
-											<h1><?php echo $lastTitle ?></h1>
+										<a href="$lastLink">
+											<h1>$lastTitle</h1>
 										</a>
-										<span class="byline">By <?php echo $lastAuthorName ?>, <?php echo $lastDate ?></span>
-										<p><?php echo $lastDesc ?></p>
+										<span class="byline">By $lastAuthorName, $lastDate</span>
+										<p>$lastDesc</p>
 									</div>
 								</div>
+EOT;
+								return [
+								    $lastDateIndex => $output,
+								]; ?>
 						<?php } 
 						}
 						$the_query = new WP_Query('post_type=blogfeed');
+						$boxes = [];
 						if ( $the_query->have_posts() ) { 
 							while ( $the_query->have_posts() ) {
 								$the_query->the_post();
 								$banner = wp_get_attachment_url( get_post_thumbnail_id() );
 							    $desc = get_the_content();
 							    $feedURL = get_the_title();
-						    	projectBox($banner, $desc, $feedURL);
+						    	$box = projectBox($banner, $desc, $feedURL); 
+						    	// append to array
+						    	$boxes = array_merge($boxes, $box);
 						    } 
 						} else {
 							echo 'No posts found!';
 						}
 						wp_reset_postdata();
+						?>
+						<?php
+						// reorder feeds
+						ksort($boxes);
+						$boxes = array_reverse($boxes);
+						
+						// print feeds
+						foreach ($boxes as $key => $value) {
+							echo $value;
+						}
 						?>
 					</div>
 				</div>				
