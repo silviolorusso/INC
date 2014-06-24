@@ -281,4 +281,13 @@ function catch_that_image() {
   }
   return $first_img;
 }
+
+/* allow to upload EPUB & mobi & md*/
+function addUploadMimes($mimes) {
+    $mimes = array_merge($mimes, array(
+        'epub|mobi|md' => 'application/octet-stream'
+    ));
+    return $mimes;
+}
+add_filter('upload_mimes', 'addUploadMimes');
 ?>

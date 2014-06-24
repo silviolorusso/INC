@@ -987,7 +987,7 @@ nav#burger li.current_page_ancestor a:hover {
 }
 .box .box-right h1 {
   font-size: 1.5em;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 10px;
   margin-top: 2px;
   color: #ff3300;
@@ -1969,7 +1969,7 @@ NAVIGATION STYLES
     display: block;
   }
   #content #pre-inner-content #inc-blurb {
-    font-size: 2em;
+    font-size: 1.5em;
   }
   #content #pre-inner-content #inc-news {
     font-size: 1em;

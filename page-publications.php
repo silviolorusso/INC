@@ -7,7 +7,14 @@ Template Name: Publications
 <?php get_header(); ?>
 			<div id="content">
 				<div id="inner-content" class="wrap clearfix">
-					<h1 class="title-out">Publications</h1>		
+					<h1 class="title-out">Publications</h1>	
+
+					<a href="order-inc-publications/" id="order-button">
+						<div id="geert-blog" class="box">
+			        		<p>Order INC Publications</p>
+			        	</div>
+			        </a>
+
 					<div id="pub-menu" class="clearfix">
 					  <ul>
 			            <li id="all" class="pub-menu-items current">
@@ -34,11 +41,6 @@ Template Name: Publications
 			            <li id="misc" class="pub-menu-items">
 			                Miscellanea
 			            </li>
-			            <a href="order-inc-publications/">
-				          	<li id="misc" class="pub-menu-items">
-				                Order INC Publications
-				            </li>
-				        </a>
 					  </ul>
 					</div>
 					<div id="pub-desc" class="clearfix">

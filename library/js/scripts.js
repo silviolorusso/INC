@@ -114,6 +114,9 @@ jQuery(document).ready(function($) {
 	  
 	  // ScrollTo
 	  $.localScroll({offset:-90});
+
+	  // little hack for INC blog feed
+	  $('.home .box-left a[href$="http://networkcultures.org/"]').attr('href','http://networkcultures.org/blog/');
 }); /* end of as page load scripts */
 
 

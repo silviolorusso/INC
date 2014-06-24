@@ -7,7 +7,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php/autoloader.php');
 function getFeed($feedURL) {      
     $feed = new SimplePie();
     $feed->set_feed_url($feedURL);
-    $feed->set_cache_location($_SERVER['DOCUMENT_ROOT'] . '/cache');
+    $feed->enable_cache(false);
+    // $feed->set_cache_location($_SERVER['DOCUMENT_ROOT'] . '/cache');
     $feed->init();
     $feed->handle_content_type();
     return $feed;
