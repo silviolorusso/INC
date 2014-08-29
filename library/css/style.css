@@ -849,7 +849,7 @@ nav#burger div#navicon {
   margin-bottom: -2px;
 }
 nav#burger div#navicon span::before {
-  content: "▼";
+  content: "▶";
   margin-right: 15px;
 }
 nav#burger div#navicon.open {
@@ -857,7 +857,7 @@ nav#burger div#navicon.open {
   color: #ffffff;
 }
 nav#burger div#navicon.open span::before {
-  content: "▲";
+  content: "▼";
   margin-right: 15px;
 }
 nav#burger > div.top-nav {
@@ -1595,6 +1595,9 @@ p.audioplayer_container object {
 .footer #inner-footer #credits a {
   font-weight: 800;
 }
+.page-item-5377 {
+  display: none !important;
+}
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -1852,9 +1855,6 @@ NAVIGATION STYLES
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
-  }
-  nav#baguette > ul > li:first-child {
-    display: none;
   }
   nav#baguette ul {
     margin: 2px 0;

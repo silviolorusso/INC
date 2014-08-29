@@ -200,14 +200,14 @@ nav#burger {
 		margin-top: -2px;
 		margin-bottom: -2px;
 		span::before { 
-		  content: "▼";
+		  content: "▶";
 		  margin-right: 15px;
 		}
 		&.open {
 			background-color: @link-color;
 			color: @white;
 			span::before { 
-			  content: "▲";
+			  content: "▼";
 			  margin-right: 15px;
 			}
 		}
@@ -1140,4 +1140,9 @@ p.audioplayer_container object {
 			}
 		}
 	}
+}
+
+// lil' menu hack: hide ‘Order Inc Publications’ button
+.page-item-5377 {
+	display: none !important;
 }

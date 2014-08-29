@@ -504,9 +504,6 @@ nav#baguette {
   /* highlight current page */
   /* end current highlighters */
 }
-nav#baguette > ul > li:first-child {
-  display: none;
-}
 nav#baguette ul {
   margin: 2px 0;
 }
