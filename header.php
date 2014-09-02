@@ -47,6 +47,12 @@
 		<!-- ScrollTo -->
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.scrollTo.min.js"></script>
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.localScroll.min.js"></script>
+		<style type="text/css">
+			/* hide search page */
+			li.page-item-5585 {
+				display: none !important;
+			}
+		</style>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="container">
@@ -58,10 +64,15 @@
 						</a>
 					</p>
 					<div id="search">
+						<!-- 				
 						<form method="get" id="searchform" action="http://www.google.com/search">
 							<input type="text" class="inputbox" alt="search" maxlength="20" name="q" id="s" size="15">
 							<input type="radio" name="sitesearch" value="http://networkcultures.org" checked="" style="display:none;">
-			        	</form>			    
+			       </form> 
+			     	-->
+			      <form class="ms-global-search_form" method="get" action="http://networkcultures.org/globalsearch/">
+							<input class="ms-global-search_hbox inputbox" name="mssearch" alt="search" maxlength="20" id="s" size="15" placeholder="Search">
+		    		</form> 
 					</div>
 				</div>
 			</header>
