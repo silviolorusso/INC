@@ -4,7 +4,52 @@
 					<div id="inc-blurb">
 						<p><?php echo get_option('inc_blurb');?></p>
 					</div>
+
+					<!-- <div class="box clearfix" id="inc-news">
+						<div class="box-left index">
+							<a href="<?php echo home_url().'/blog'; ?>">
+								<div id="inc-news-pic">
+								</div>
+							</a>
+							<p>Updates from the INC</p>
+						</div>
+						<div class="box-right latest">
+							<small>Latest Post</small>
+							<?php
+							$the_query = new WP_Query('posts_per_page=1');
+							if ( $the_query->have_posts() ) { 
+								while ( $the_query->have_posts() ) {
+									$the_query->the_post(); ?>
+									<a href="<?php echo the_permalink(); ?>">
+											<h1><?php echo get_the_title(); ?></h1>
+									</a>
+									<span class="byline">By <?php echo get_the_author(); ?>, <?php echo get_the_date(); ?></span>
+									<p><?php echo the_excerpt(); ?></p>
+								<?php } 
+							} else {
+								echo 'No posts found!';
+							}
+							wp_reset_postdata(); ?>
+						</div>
+					</div> -->
 				</div>
+<!-- 				
+				<?php 
+				$banner = get_option('inc_banner');
+				$banner_url = get_option('inc_banner_url');
+				if ($banner != '') { ?>
+				<a href="<?php echo $banner_url ?>">
+					<div id="banner">
+						<img src="<?php echo get_option('inc_banner');?>" />
+					</div>
+				</a>
+				<?php } ?> 
+-->
+<!-- 				
+				<div id="current-projects" class="wrap clearfix">
+					<h1 class="title-out">Current Projects</h1>
+				</div> 
+-->
 				<!-- projects here: new versions -->
 				<div id="inner-content" class="wrap clearfix">
 					<a href="http://networkcultures.org/geert/">

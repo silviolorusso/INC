@@ -377,6 +377,25 @@ nav#burger {
 
 #content {
 	padding-bottom: 2em;
+	#banners{
+		padding-top: 2em;
+		.banner {
+			&:hover {
+				box-shadow: none;
+			}
+			float: left;
+			height: 20%;
+			line-height: 0;
+			margin-bottom: 1em;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
 	#pre-inner-content {
 		#inc-blurb {
 			font-weight: 300;
@@ -406,15 +425,6 @@ nav#burger {
 		p {
 			padding: 0.4em 0 0.5em 0;
 			margin-top: 0.7em;
-		}
-	}
-	#banner{
-		background-color: @white;
-		line-height: 0;
-		margin-bottom: 1em;
-		img {
-			width: 100%;
-			height: auto;
 		}
 	}
 	.title-out {

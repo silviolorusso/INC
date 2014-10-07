@@ -616,6 +616,15 @@ nav#baguette li.current_page_ancestor a:hover {
 .box .latest {
   display: block;
 }
+#content #banners .banner {
+  margin-bottom: 0;
+}
+#content #banners .one {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
 #content #pre-inner-content #inc-blurb {
   font-size: 1.5em;
 }

@@ -1,5 +1,54 @@
 <?php get_header(); ?>
 			<div id="content">
+				<div id="banners" class="clearfix">
+					<div class="wrap">
+						<?php
+						$args = array(
+							'post_type' => 'banner',
+							'posts_per_page' => 3,
+						);
+						$the_query = new WP_Query($args);
+						$count = $the_query->post_count;
+						$i = 0;
+						if ( $the_query->have_posts() ) { 
+							while ( $the_query->have_posts() ) {
+								$the_query->the_post();
+								$banner = wp_get_attachment_url( get_post_thumbnail_id() );
+								$feedURL = get_the_title();
+								?>
+								<div class="box clearfix banner <?php 
+									if ($count == 3) {
+										echo 'fourcol ';
+										if ($i == 0) { 
+											echo 'first';
+										} else if ($i == 3) {
+											echo 'last';
+										}
+									} else if ($count == 2) {
+										echo 'sixcol ';
+										if ($i == 0) { 
+											echo 'first';
+										} else if ($i == 2) {
+											echo 'last';
+										}
+									} else {
+										echo "one";
+									}
+								?>">
+									<a href="<?php echo $feedURL ?>">
+										<img class="index-pic" src="<?php echo $banner ?>" />
+									</a>
+								</div>
+								<?php
+								$i++;
+							}
+						} else {
+									echo 'No posts found!';
+								}
+								wp_reset_postdata();
+						?>
+					</div>
+				</div>
 				<div id="pre-inner-content" class="wrap clearfix">
 					<div id="inc-blurb">
 						<p><?php echo get_option('inc_blurb');?></p>
@@ -13,6 +62,7 @@
 						</div>
 					</a>
 					<div id="main" class="twelvecol first last clearfix" role="main">
+
 						<?php
 						include_once('library/parse-feed.php');
 						function projectBox($banner, $description, $feedURL) {
@@ -77,21 +127,6 @@ EOT;
 						$i = 0;
 						foreach ($boxes as $key => $value) {
 							echo $value;
-							if ($i==0) {
-								$banner = get_option('inc_banner');
-								$banner_url = get_option('inc_banner_url');
-								if ($banner != '') { ?>
-					</div>
-				</div>
-								<a href="<?php echo $banner_url ?>">
-									<div id="banner">
-										<img src="<?php echo get_option('inc_banner');?>" />
-									</div>
-								</a>
-				<div id="inner-content" class="wrap clearfix">
-					<div id="main" class="twelvecol first last clearfix wrap" role="main">
-							<?php } 
-							}
 							$i++;
 						}
 						?>

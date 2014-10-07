@@ -38,6 +38,9 @@ Template Name: Publications
 			             <li id="conference-report" class="pub-menu-items">
 			                Conference Reports
 			            </li>
+			            <li id="epub-3" class="pub-menu-items">
+			                EPUB
+			            </li>
 			            <li id="misc" class="pub-menu-items">
 			                Miscellanea
 			            </li>
@@ -68,6 +71,9 @@ Template Name: Publications
 			            <p id="geert-book-desc">
 			                <?php echo types_render_field("geert", array('output'=>'raw')); ?>
 			            </p>
+			            <p id="epub-desc">
+			                <?php echo types_render_field("epub", array('output'=>'raw')); ?>
+			            </p>
 					</div>
 			        <?php
 			        $query = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'publication' ) );
@@ -88,6 +94,7 @@ Template Name: Publications
 			                <?php
 			                    foreach ($categories as $category) {
 			                            echo $category->slug ;
+			                            echo " ";
 			                    }        
 			                ?>">
 			            <a href="<?php echo get_permalink($id) ?>">
@@ -98,9 +105,12 @@ Template Name: Publications
 						<div class="entry">
 							<p class="categories">
 			                <?php 
+			                		$out = array();
 			                    foreach ($categories as $category) {
-			                            echo $category->cat_name ;
-			                    }        
+			                    	$cat_name = $category->cat_name;
+			                      array_push($out, $cat_name);
+			                    }
+			                    echo implode(', ', $out);
 			                ?>
 			                </p>
 							<p class="pub-title">
@@ -187,6 +197,7 @@ Template Name: Publications
         selectPub('conference-report');
         selectPub('misc');
         selectPub('geert-book');
+        selectPub('epub-3');
 </script>
 			
 <?php get_footer(); ?>
