@@ -18,32 +18,45 @@ Template Name: Publications
 					<div id="pub-menu" class="clearfix">
 					  <ul>
 			            <li id="all" class="pub-menu-items current">
-			                All
+			              All
 			            </li>
-			            <li id="inc-reader" class="pub-menu-items">
-			                INC Readers
-			            </li>
-			            <li id="net-notebook" class="pub-menu-items">
-			                Network Notebooks
-			            </li>
-			            <li id="tod" class="pub-menu-items">
-			                Theory on Demand
-			            </li>
-			            <li id="studies" class="pub-menu-items">
-			                Studies in Network Cultures
-			            </li>
-			   			<li id="geert-book" class="pub-menu-items">
-			                Geert Lovink's books
-			            </li>
-			             <li id="conference-report" class="pub-menu-items">
-			                Conference Reports
-			            </li>
-			            <li id="epub-3" class="pub-menu-items">
-			                EPUB
-			            </li>
-			            <li id="misc" class="pub-menu-items">
-			                Miscellanea
-			            </li>
+			            <a href="#increaders">
+				            <li id="inc-reader" class="pub-menu-items">
+				                INC Readers
+				            </li>
+			          	</a>
+			            <a href="#netnotebook">
+				            <li id="net-notebook" class="pub-menu-items">
+				                Network Notebooks
+				            </li>
+			          	</a>
+			            <a href="#tods">
+				            <li id="tod" class="pub-menu-items">
+				                Theory on Demand
+				            </li>
+			            <a href="#studiesnc">
+				            <li id="studies" class="pub-menu-items">
+				                Studies in Network Cultures
+				            </li>
+			   					<a href="#geertbooks">
+				   					<li id="geert-book" class="pub-menu-items">
+				                Geert Lovink's books
+				            </li>
+			            <a href="#reports">
+				            <li id="conference-report" class="pub-menu-items">
+				                Conference Reports
+				            </li>
+			          	</a>
+			            <a href="#epub">
+				            <li id="epub-3" class="pub-menu-items">
+				                EPUB
+				            </li>
+			          	</a>
+			          	<a href="#miscellanea">
+				            <li id="misc" class="pub-menu-items">
+				                Miscellanea
+				            </li>
+			          	</a>
 					  </ul>
 					</div>
 					<div id="pub-desc" class="clearfix">
@@ -176,7 +189,6 @@ Template Name: Publications
 	            jQuery('div.publication:not(' +  pubClass + ')').hide('fast');
 	            jQuery('div#pub-desc p').hide();
 	            jQuery('p' + pubId + '-desc').show();
-	            
 	            jQuery('div.publication').removeClass("first last");
 	            i = 1;
 	            jQuery(pubClass).each(function() {
@@ -198,6 +210,31 @@ Template Name: Publications
         selectPub('misc');
         selectPub('geert-book');
         selectPub('epub-3');
+
+        // EPUB special link
+        jQuery( document ).ready(function() {
+				  var hash = window.location.hash;
+				  if (hash == "#epub") {
+				  		var pubId = '#epub-3';
+		    			var pubClass = '.epub-3';
+							jQuery('.pub-menu-items').removeClass("current");
+	            jQuery('#epub-3').addClass("current");
+	            jQuery('div.publication' + pubClass).show('fast');
+	            jQuery('div.publication:not(' +  pubClass + ')').hide('fast');
+	            jQuery('div#pub-desc p').hide();
+	            jQuery('p' + pubId + '-desc').show();
+	            jQuery('div.publication').removeClass("first last");
+	            i = 1;
+	            jQuery(pubClass).each(function() {
+								if ((i - 1) % 3 == 0) {
+									jQuery(this).addClass("first yo");
+								} else if ((i % 3) == 0) {
+									jQuery(this).addClass("last");
+								} 
+								i = i+1;
+				  		});
+				  }
+				});
 </script>
 			
 <?php get_footer(); ?>
